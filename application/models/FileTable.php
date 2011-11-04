@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * @copyright Roy Rosenzweig Center for History and New Media, 2007-2010
  * @license http://www.gnu.org/licenses/gpl-3.0.txt
@@ -17,8 +17,8 @@ class FileTable extends Omeka_Db_Table
     
     /**
      * All files should only be retrieved if they join properly on the items
-     * table.  
-     * 
+     * table.
+     *
      * @return Omeka_Db_Select
      */
     public function getSelect()
@@ -34,13 +34,13 @@ class FileTable extends Omeka_Db_Table
     }
     
     /**
-     * Retrieve a random file with an image associated with an item. 
-     * 
+     * Retrieve a random file with an image associated with an item.
+     *
      * @param integer $itemId
      * @return File
      */
     public function getRandomFileWithImage($itemId)
-    {        
+    {
         $select = $this->getSelect()
                        ->where('f.item_id = ? AND f.has_derivative_image = 1')
                        ->order('RAND()')
@@ -50,8 +50,8 @@ class FileTable extends Omeka_Db_Table
     }
     
     /**
-     * Retrieve files associated with an item. 
-     * 
+     * Retrieve files associated with an item.
+     *
      * @param integer $itemId
      * @param array $fileIds Optional If given, this will only retrieve files
      * with these specific IDs.
@@ -73,12 +73,12 @@ class FileTable extends Omeka_Db_Table
 
     /**
      * Retrieve files for an item that has derivative images.
-     * 
+     *
      * @param integer $itemId
      * @param integer|null $index Optional If given, this specifies the file to
 	 * retrieve for an item, based upon the ordering of its derivative files.
 	 * @param string $sort The manner in which to order the files by. For example: 'id' = file id, 'filename' = alphabetical by filename
-	 * 
+	 *
      * @return File|array
      */
 	public function findWithImages($itemId, $index=null, $sort='id')
@@ -97,21 +97,27 @@ class FileTable extends Omeka_Db_Table
 
 	}
 	
+	protected function recordFromData($data)
+	{
+	    $data['metadata'] = unserialize($data['metadata']);
+	    return parent::recordFromData($data);
+	}
+	
 	/**
      * Orders select results for files.
      *
      * @param Omeka_Db_Select The select object for finding files
-	 * @param string $sort The manner in which to order the files by. 
-	 * For example: 
+	 * @param string $sort The manner in which to order the files by.
+	 * For example:
 	 * 'id' = file id
 	 * 'filename' = alphabetical by filename
-	 * 
+	 *
      * @return void
      */
-	private function _orderFilesBy($select, $sort) 
+	private function _orderFilesBy($select, $sort)
 	{
 	    // order the files
-		switch($sort) {  
+		switch($sort) {
 		    case 'filename':
 		       $select->order('f.original_filename ASC');
 		    break;

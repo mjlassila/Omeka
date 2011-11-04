@@ -8,7 +8,7 @@
  */
 
 /**
- * Defines mime_content_type() if it is not available in the current 
+ * Defines mime_content_type() if it is not available in the current
  * installation environment.
  */
 if (!function_exists('mime_content_type')) {
@@ -23,8 +23,8 @@ if (!function_exists('mime_content_type')) {
  * @package Omeka
  * @copyright Roy Rosenzweig Center for History and New Media, 2007-2010
  */
-class File extends Omeka_Record 
-{ 
+class File extends Omeka_Record
+{
     const DISABLE_DEFAULT_VALIDATION_OPTION = 'disable_default_file_validation';
 
     public $item_id;
@@ -39,6 +39,18 @@ class File extends Omeka_Record
     public $added;
     public $modified;
     public $stored = '0';
+    public $metadata;
+    
+    /**
+     * List of MIME types that could be considered ambiguous.
+     *
+     * @see Omeka_File::_mimeTypeIsAmbiguous()
+     * @var array
+     */
+    protected $_ambiguousMimeTypes = array(
+        'text/plain',
+        'application/octet-stream',
+        'regular file');
 
     static private $_pathsByType = array(
         'archive' => 'files',
@@ -57,28 +69,29 @@ class File extends Omeka_Record
         $now = Zend_Date::now()->toString(self::DATE_FORMAT);
         $this->added = $now;
         $this->modified = $now;
-        $fileInfo = new Omeka_File_Info($this);
-        $fileInfo->setMimeTypeIfAmbiguous();
+        $this->metadata = serialize($this->metadata);
+        $this->setMimeTypeIfAmbiguous();
     }
 
     protected function afterInsert()
     {
         $dispatcher = Zend_Registry::get('job_dispatcher');
         $dispatcher->setQueueName('uploads');
-        $dispatcher->send('File_ProcessUploadJob', 
+        $dispatcher->send('File_ProcessUploadJob',
                           array('fileId' => $this->id));
     }
     
     protected function beforeUpdate()
     {
+        $this->metadata = serialize($this->metadata);
         $this->modified = Zend_Date::now()->toString(self::DATE_FORMAT);
     }
     
     protected function filterInput($post)
     {
-        $immutable = array('id', 'modified', 'added', 
-                           'authentication', 'archive_filename', 
-                           'original_filename', 'mime_browser', 
+        $immutable = array('id', 'modified', 'added',
+                           'authentication', 'archive_filename',
+                           'original_filename', 'mime_browser',
                            'mime_os', 'type_os', 'item_id');
         foreach ($immutable as $value) {
             unset($post[$value]);
@@ -87,7 +100,7 @@ class File extends Omeka_Record
     }
     
     protected function beforeSaveForm($post)
-    {        
+    {
         $this->beforeSaveElements($post);
     }
         
@@ -132,11 +145,11 @@ class File extends Omeka_Record
     {
         list($base, $ext) = explode('.', $this->archive_filename);
         $fn = $base . '.' . Omeka_File_Derivative_Image::DERIVATIVE_EXT;
-        return $fn;        
+        return $fn;
     }
     
     public function hasThumbnail()
-    {        
+    {
         return $this->has_derivative_image;
     }
     
@@ -147,10 +160,10 @@ class File extends Omeka_Record
     
     /**
      * Set the default values that will be stored for this file in the 'files' table.
-     * 
+     *
      * These values include 'size', 'authentication', 'mime_browser', 'mime_os', 'type_os'
      * and 'archive_filename.
-     * 
+     *
      * @param string
      * @return void
      */
@@ -178,7 +191,7 @@ class File extends Omeka_Record
     
     /**
      * Retrieve the definitive MIME type for this file.
-     * 
+     *
      * @param string
      * @return string
      */
@@ -191,7 +204,7 @@ class File extends Omeka_Record
      * @internal Seems kind of arbitrary that 'mime_browser' contains the
      * definitive MIME type, but at least we can abstract it so that it's
      * easier to change later if necessary.
-     * 
+     *
      * @param string
      * @return void
      */
@@ -202,7 +215,7 @@ class File extends Omeka_Record
     
     /**
      * Filters the mime type.  In particular, it removes the charset information.
-     * 
+     *
      * @param string $mimeType The raw mime type
      * @return string Filtered mime type.
      */
@@ -212,7 +225,7 @@ class File extends Omeka_Record
         return trim($mimeTypeParts[0]);
     }
     
-    public function unlinkFile() 
+    public function unlinkFile()
     {
         $storage = $this->getStorage();
 
@@ -232,7 +245,7 @@ class File extends Omeka_Record
         }
     }
     
-    protected function _delete() 
+    protected function _delete()
     {
         $this->unlinkFile();
         $this->deleteElementTexts();
@@ -243,7 +256,7 @@ class File extends Omeka_Record
         $pathToOriginalFile = $this->getPath('archive');
         
         // Create derivative images if possible.
-        if (Omeka_File_Derivative_Image::createAll($pathToOriginalFile, 
+        if (Omeka_File_Derivative_Image::createAll($pathToOriginalFile,
                                                    $this->getMimeType())) {
             $this->has_derivative_image = 1;
             $this->save();
@@ -252,15 +265,55 @@ class File extends Omeka_Record
     
     /**
      * Extract metadata associated with the file.
-     * 
+     *
      * @return boolean
      */
     public function extractMetadata()
     {
-        $extractor = new Omeka_File_Info($this);
-        return $extractor->extract();
+
+        if (!is_readable($this->getPath('archive'))) {
+            throw new Exception('Could not extract metadata: unable to read file at the following path: "' . $this->_filePath . '"');
+        }
+
+        // Skip if getid3 did not return a valid object.
+        if (!$id3 = $this->_getId3()) {
+            return false;
+        }
+        $this->metadata = $id3->info;
+        return true;
+
+    }
+    /**
+     * References a list of ambiguous mime types from "http://msdn2.microsoft.com/en-us/library/ms775147.aspx".
+     *
+     * @param string $mimeType
+     * @return boolean
+     */
+    public function isAmbiguousMimeType($mimeType)
+    {
+        return (empty($mimeType) || in_array($mimeType, $this->_ambiguousMimeTypes));
     }
 
+    /**
+     * Sets the MIME type for the file to the one detected by getID3, but only
+     * if the existing MIME type is 'ambiguous' and getID3 can detect a better
+     * one.
+     *
+     * @uses Omeka_File::isAmbiguousMimeType()
+     */
+    public function setMimeTypeIfAmbiguous()
+    {
+        $mimeType = $this->getMimeType();
+        if ($this->isAmbiguousMimeType($mimeType)) {
+            // WARNING: this may cause a memory error on large files.
+            if ($id3 = $this->_getId3()) {
+                $mimeType = $id3->info['mime_type'];
+            }
+            if ($mimeType) {
+                $this->setMimeType($mimeType);
+            }
+        }
+    }
     public function storeFiles()
     {
         $storage = $this->getStorage();
@@ -308,5 +361,35 @@ class File extends Omeka_Record
         }
 
         return $this->_storage;
+    }
+    
+    /**
+     * Pull down the file's extra metadata via getID3 library.
+     *
+     * @param string $path Path to file.
+     * @return getID3
+     */
+    private function _getId3()
+    {
+        // Do not extract metadata if the exif module is not loaded. This
+        // applies to all files, not just files with Exif data -- i.e. images.
+        if (!extension_loaded('exif')) {
+            return false;
+        }
+        
+        require_once 'getid3/getid3.php';
+        $id3 = new getID3;
+        $id3->encoding = 'UTF-8';
+        
+        try {
+            $id3->Analyze($this->getPath('archive'));
+            $this->_id3 = $id3;
+        } catch (getid3_exception $e) {
+            $message = $e->getMessage();
+            _log("getID3: $message");
+            return false;
+        }
+
+        return $id3;
     }
 }
