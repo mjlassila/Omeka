@@ -39,7 +39,8 @@ class File extends Omeka_Record
     public $added;
     public $modified;
     public $stored = '0';
-    public $metadata;
+    public $metadata = '';
+    public $id;
     
     /**
      * List of MIME types that could be considered ambiguous.
