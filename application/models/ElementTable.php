@@ -4,7 +4,7 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.txt
  * @package Omeka
  * @subpackage Models
- */    
+ */
  
 /**
  * @package Omeka
@@ -13,12 +13,12 @@
  * @copyright Roy Rosenzweig Center for History and New Media, 2007-2010
  */
 class ElementTable extends Omeka_Db_Table
-{   
+{
     /**
      * Find all the Element records that have a specific record type or the
      * record type 'All', indicating that these elements would apply to any
      * record type.
-     * 
+     *
      * @param string
      * @return array
      */
@@ -38,20 +38,10 @@ class ElementTable extends Omeka_Db_Table
         return $this->fetchObjects($select);
     }
     
-    public function findForFilesByMimeType($mimeType = null)
-    {
-        $db = $this->getDb(); 
-        $sqlMimeTypeElements = $this->getSelect()
-        ->joinInner(array('mesl'=>$db->MimeElementSetLookup), 'mesl.element_set_id = es.id', array())
-        ->where('mesl.mime = ?', $mimeType);
-        
-        return $this->fetchObjects($sqlMimeTypeElements);        
-    }
-    
     /**
      * Overriding getSelect() to always return the type_name and type_regex
      * for retrieved elements.
-     * 
+     *
      * @return Omeka_Db_Select
      */
     public function getSelect()
@@ -59,7 +49,7 @@ class ElementTable extends Omeka_Db_Table
         $select = parent::getSelect();
         $db = $this->getDb();
         // Join on the element_types table to retrieve type regex and type name
-        $select->joinLeft(array('dt'=>$db->DataType), 'dt.id = e.data_type_id', 
+        $select->joinLeft(array('dt'=>$db->DataType), 'dt.id = e.data_type_id',
             array('data_type_name'=>'dt.name'));
             
         // Join on the element_sets table to retrieve set name
@@ -70,7 +60,7 @@ class ElementTable extends Omeka_Db_Table
     
     /**
      * Return the element's name and id for <select> tags on it.
-     * 
+     *
      * @see Omeka_Db_Table::findPairsForSelectForm()
      * @param string
      * @return void
@@ -91,7 +81,7 @@ class ElementTable extends Omeka_Db_Table
     
     /**
      * Retrieve all elements for a set.
-     * 
+     *
      * @see display_element_set_form()
      * @param string The name of the set to which elements belong.
      * @return Element
@@ -106,12 +96,12 @@ class ElementTable extends Omeka_Db_Table
         
         $this->orderElements($select);
         
-        return $this->fetchObjects($select);       
+        return $this->fetchObjects($select);
     }
     
     /**
      * Retrieve a set of Element records that belong to a specific Item Type.
-     * 
+     *
      * @see Item::getItemTypeElements()
      * @param integer
      * @return array Set of element records.
@@ -124,7 +114,7 @@ class ElementTable extends Omeka_Db_Table
         $select->where('ite.item_type_id = ?');
         $select->order('ite.order ASC');
         
-        $elements = $this->fetchObjects($select, array($itemTypeId)); 
+        $elements = $this->fetchObjects($select, array($itemTypeId));
 
        return $elements;
     }
@@ -137,7 +127,7 @@ class ElementTable extends Omeka_Db_Table
     
     /**
      * Manipulate a Select object based on a set of criteria.
-     * 
+     *
      * @param Omeka_Db_Select $select
      * @param array $params Possible parameters include:
      * <ul>
@@ -177,14 +167,14 @@ class ElementTable extends Omeka_Db_Table
         }
 
         if (array_key_exists('element_name', $params)) {
-            $select->where('e.name = binary ?', (string) $params['element_name']); 
+            $select->where('e.name = binary ?', (string) $params['element_name']);
         }
 
         // Retrive results including, but not limited to, a specific item type.
         if (array_key_exists('item_type_id', $params)) {
             $select->joinLeft(array('ite' => $db->ItemTypesElements),
                 "ite.element_id = e.id", array());
-            $select->where('ite.item_type_id = ? OR ite.item_type_id IS NULL', 
+            $select->where('ite.item_type_id = ? OR ite.item_type_id IS NULL',
                 (int)$params['item_type_id']);
         } else if (array_key_exists('exclude_item_type', $params)) {
             $select->where('es.name != ?', ELEMENT_SET_ITEM_TYPE);
@@ -192,10 +182,10 @@ class ElementTable extends Omeka_Db_Table
     }
     
     /**
-     * Override parent class method to retrieve a multidimensional array of 
-     * elements, organized by element set, to be used in Zend's FormSelect view 
+     * Override parent class method to retrieve a multidimensional array of
+     * elements, organized by element set, to be used in Zend's FormSelect view
      * helper.
-     * 
+     *
      * @param array $options Set of parameters for searching/filtering results.
      * @see Omeka_Db_Table::findPairsForSelectForm()
      * @return array
@@ -210,7 +200,7 @@ class ElementTable extends Omeka_Db_Table
         $select = $this->getSelectForFindBy($options);
         $select->reset(Zend_Db_Select::COLUMNS);
         $select->from(array(), array(
-            'id' => 'e.id', 
+            'id' => 'e.id',
             'name' => 'e.name',
             'set_name' => 'es.name',
         ));
@@ -218,7 +208,7 @@ class ElementTable extends Omeka_Db_Table
         $elements = $this->fetchAll($select);
         $options = array();
         foreach ($elements as $element) {
-            $options[$element['set_name']][$element['id']] = $element['name']; 
+            $options[$element['set_name']][$element['id']] = $element['name'];
         }
         return $options;
     }

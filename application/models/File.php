@@ -180,15 +180,6 @@ class File extends Omeka_Record
         
         $this->archive_filename = basename($filepath);
     }
-        
-    public function getMimeTypeElements($mimeType = null)
-    {
-        if (!$mimeType) {
-            $mimeType = $this->getMimeType();
-        }
-        
-        return $this->getTable('Element')->findForFilesByMimeType($mimeType);
-    }
     
     /**
      * Retrieve the definitive MIME type for this file.
