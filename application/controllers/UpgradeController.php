@@ -1,20 +1,19 @@
 <?php 
 /**
- * @version $Id$
- * @copyright Roy Rosenzweig Center for History and New Media, 2007-2010
+ * @copyright Roy Rosenzweig Center for History and New Media, 2007-2011
  * @license http://www.gnu.org/licenses/gpl-3.0.txt
  * @package Omeka
  * @access private
- **/
+ */
  
 /**
+ * Database upgrade controller.
+ * 
  * @internal This implements Omeka internals and is not part of the public API.
  * @access private 
  * @package Omeka
  * @subpackage Controllers
- * @author CHNM
- * @copyright Roy Rosenzweig Center for History and New Media, 2007-2010
- **/ 
+ */ 
 class UpgradeController extends Zend_Controller_Action
 {
     public function __construct(Zend_Controller_Request_Abstract $request,
@@ -55,7 +54,7 @@ class UpgradeController extends Zend_Controller_Action
             $this->view->error = $e->getMessage();
             $this->view->trace = $e->getTraceAsString();
         } catch (Zend_Db_Exception $e) {
-            $this->view->error = "SQL error in migration: " . $e->getMessage();
+            $this->view->error = __("SQL error in migration: ") . $e->getMessage();
             $this->view->trace = $e->getTraceAsString();
         }
     }

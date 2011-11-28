@@ -775,3 +775,70 @@ function plugin_is_active($name, $version = null, $compOperator = '>=')
         return true;
     } 
 }
+
+/**
+ * Wrapper for Zend_Translate
+ *
+ * @since 1.4
+ * @param string The string to be translated.
+ * @return string The translated string.
+ */
+function __($string)
+{
+    try {
+        $translate = Zend_Registry::get('Zend_Translate');
+        $string = $translate->translate($string);
+    } catch (Zend_Exception $e) {
+        // Skip translation if we can't load Zend_Translate object.
+    }
+    
+    $args = func_get_args();
+    
+    array_shift($args);
+    
+    if (!empty($args)) {
+        return vsprintf($string, $args);
+    }
+    
+    return $string;
+}
+
+/**
+ * Get the correct HTML "lang" attribute for the current locale.
+ *
+ * @return string
+ */
+function get_html_lang()
+{
+    try {
+        $locale = Zend_Registry::get('Zend_Locale');
+    } catch(Zend_Exception $e) {
+        return 'en-US';
+    }
+
+    return str_replace('_', '-', $locale->toString());
+}
+
+
+/**
+ * Format a date for output according to the current locale.
+ *
+ * @param mixed $date Date to format. If an integer, the date is intepreted
+ *  as a Unix timestamp. If a string, the date is interpreted as an ISO 8601
+ *  date.
+ * @param string $format Format to apply. See Zend_Date for possible formats.
+ *  The default format is the current locale's "medium" format.
+ *
+ * @return string
+ */
+function format_date($date, $format = Zend_Date::DATE_MEDIUM)
+{
+    if (is_int($date)) {
+        $sourceFormat = Zend_Date::TIMESTAMP;
+    } else {
+        $sourceFormat = Zend_Date::ISO_8601;
+    }
+    
+    $dateObj = new Zend_Date($date, $sourceFormat);
+    return $dateObj->toString($format);
+}
