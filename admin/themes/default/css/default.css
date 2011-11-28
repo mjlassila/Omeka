@@ -686,7 +686,9 @@ body {font:62.5% "Lucida Grande",Verdana, Arial, Helvetica, sans-serif; backgrou
     /* Files Show Page */
     
     #mime-type-metadata-exif-array .element-text {overflow-x:scroll; border:1px solid #d7d6e5;padding:12px;}
-    
+	dl.file-metadata {margin-left: 18px; }
+	dl.file-metadata dt {float:left; margin-right: 6px; font-size: 1.3em; font-weight: bold;}
+	    
     /* Files Edit Page */
         
     #delete-file-link {float:left; position:absolute; bottom:20px; left: 18px;width: 200px;}

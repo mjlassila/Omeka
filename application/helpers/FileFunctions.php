@@ -132,7 +132,7 @@
      if(isset($metadata['audio'])) {
          $html .= "<div class='file-metadata'>";
          $html .= "<h2>Audio Metadata</h2>";
-         $html .= "<dl>";
+         $html .= "<dl class='file-metadata'>";
          foreach($metadata['audio'] as $field=>$value) {
              $html .= "<dt>$field</dt><dd>$value</dd>";
          }
@@ -142,7 +142,7 @@
       if(isset($metadata['video'])) {
          $html .= "<div class='file-metadata'>";
          $html .= "<h2>Image/Video Metadata</h2>";
-         $html .= "<dl>";
+         $html .= "<dl class='file-metadata'>";
          foreach($metadata['video'] as $field=>$value) {
              $html .= "<dt>$field</dt><dd>$value</dd>";
          }
@@ -150,7 +150,6 @@
      }
      $html .= "</div>";
      return $html;
-     return __v()->fileMetadataList($file, $options);
  }
  
   /**
