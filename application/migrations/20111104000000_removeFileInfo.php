@@ -25,6 +25,12 @@ class removeFileInfo extends Omeka_Db_Migration
         $videoElementSet->delete();
         
         //go through all the existing files and redo grabbing the metadata with the new process
+        $files = $db->getTable('File')->findAll();
+        foreach($files as $file) {
+            $file->extractMetadata();
+            $file->save();
+            release_object($file);
+        }
         
     }
 
