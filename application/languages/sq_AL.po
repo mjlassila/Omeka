@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the Omeka package.
 # 
 # Translators:
-# Gjergj Sheldija <gjergj.sheldija@gmail.com>, 2012.
-#   <gjergj.sheldija@gmail.com>, 2011.
+# ard1t <ardit.dani@gmail.com>, 2014
+# Gjergj Sheldija <gjergj.sheldija@gmail.com>, 2012,2014
+# Gjergj Sheldija <inactive+gjergjsheldij8748763d3d714768@transifex.com>, 2011
 msgid ""
 msgstr ""
 "Project-Id-Version: Omeka\n"
-"Report-Msgid-Bugs-To: https://github.com/omeka/Omeka/issues\n"
+"Report-Msgid-Bugs-To: omeka-dev@googlegroups.com\n"
 "POT-Creation-Date: 2012-11-26 14:33-0500\n"
-"PO-Revision-Date: 2013-01-22 16:20+0000\n"
-"Last-Translator: John Flatness <john@zerocrates.org>\n"
+"PO-Revision-Date: 2014-02-21 09:46+0000\n"
+"Last-Translator: Gjergj Sheldija <gjergj.sheldija@gmail.com>\n"
 "Language-Team: Albanian (Albania) (http://www.transifex.com/projects/p/omeka/language/sq_AL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,7 +30,8 @@ msgstr ""
 #. Dublin Core: Title element name
 #: admin/themes/default/collections/browse.php:22
 #: admin/themes/default/items/browse.php:40
-#: application/views/scripts/items/browse.php:17
+#: application/views/scripts/items/browse.php:19
+#: application/views/scripts/search/index.php:13
 msgid "Title"
 msgstr "Titulli"
 
@@ -39,7 +41,7 @@ msgstr ""
 
 #. Dublin Core: Creator element name
 #: admin/themes/default/items/browse.php:41
-#: application/views/scripts/items/browse.php:18
+#: application/views/scripts/items/browse.php:20
 msgid "Creator"
 msgstr "Krijuesi"
 
@@ -315,19 +317,19 @@ msgstr ""
 
 #. User role: Admin
 msgid "Admin"
-msgstr ""
+msgstr "Admin"
 
 #. User role: Researcher
 msgid "Researcher"
-msgstr ""
+msgstr "Kërkues"
 
 #: admin/themes/default/appearance/edit-navigation.php:3
 #: admin/themes/default/appearance/edit-settings.php:2
-#: admin/themes/default/common/global-nav.php:12
+#: admin/themes/default/common/global-nav.php:11
 #: admin/themes/default/themes/browse.php:2
 #: admin/themes/default/themes/config.php:3
 msgid "Appearance"
-msgstr ""
+msgstr "Dukje"
 
 #: admin/themes/default/appearance/edit-navigation.php:14
 msgid ""
@@ -341,7 +343,7 @@ msgstr ""
 
 #: admin/themes/default/appearance/edit-navigation.php:21
 #: admin/themes/default/appearance/edit-navigation.php:37
-#: application/forms/Navigation.php:132
+#: admin/themes/default/users/edit.php:50 application/forms/Navigation.php:132
 msgid "Label"
 msgstr ""
 
@@ -349,34 +351,39 @@ msgstr ""
 #: admin/themes/default/appearance/edit-navigation.php:38
 #: application/forms/Navigation.php:133
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: admin/themes/default/appearance/edit-navigation.php:25
 msgid "Add Link"
-msgstr ""
+msgstr "Shto Lidhje"
 
 #: admin/themes/default/appearance/edit-navigation.php:31
 #: admin/themes/default/appearance/edit-settings.php:21
 #: admin/themes/default/collections/edit.php:22
 #: admin/themes/default/element-sets/edit.php:41
-#: admin/themes/default/files/edit.php:35
+#: admin/themes/default/files/edit.php:30
 #: admin/themes/default/items/batch-edit.php:130
 #: admin/themes/default/items/edit.php:19
+#: admin/themes/default/plugins/config.php:14
+#: admin/themes/default/settings/edit-api.php:68
 #: admin/themes/default/settings/edit-item-type-elements.php:38
 #: admin/themes/default/settings/edit-search.php:40
 #: admin/themes/default/settings/edit-security.php:15
 #: admin/themes/default/settings/edit-settings.php:15
 #: admin/themes/default/themes/config.php:16
-#: application/controllers/UsersController.php:210
+#: application/controllers/UsersController.php:206
 #: application/forms/ItemTypes.php:169
+#: application/libraries/Omeka/Form/Decorator/SavePanelAction.php:73
 msgid "Save Changes"
 msgstr "Ruaj ndryshimet"
 
 #: admin/themes/default/appearance/edit-navigation.php:39
 #: admin/themes/default/collections/edit.php:23
 #: admin/themes/default/collections/show.php:34
+#: admin/themes/default/files/show.php:28
 #: admin/themes/default/items/edit.php:20
 #: admin/themes/default/items/show.php:45
+#: application/libraries/Omeka/Form/Decorator/SavePanelAction.php:79
 msgid "View Public Page"
 msgstr "Shfaq faqen publike"
 
@@ -384,7 +391,7 @@ msgstr "Shfaq faqen publike"
 #: admin/themes/default/collections/edit.php:24
 #: admin/themes/default/collections/show.php:36
 #: admin/themes/default/element-sets/browse.php:29
-#: admin/themes/default/files/edit.php:37
+#: admin/themes/default/files/edit.php:32
 #: admin/themes/default/files/show.php:30
 #: admin/themes/default/item-types/edit.php:20
 #: admin/themes/default/item-types/show.php:54
@@ -393,10 +400,11 @@ msgstr "Shfaq faqen publike"
 #: admin/themes/default/items/browse.php:81
 #: admin/themes/default/items/browse.php:123
 #: admin/themes/default/items/edit.php:21
-#: admin/themes/default/items/show.php:46
+#: admin/themes/default/items/show.php:47
 #: admin/themes/default/settings/edit-item-type-elements.php:23
-#: admin/themes/default/users/browse.php:36
+#: admin/themes/default/users/browse.php:66
 #: admin/themes/default/users/edit.php:17
+#: application/libraries/Omeka/Form/Decorator/SavePanelAction.php:82
 msgid "Delete"
 msgstr "Fshij"
 
@@ -409,7 +417,7 @@ msgstr "Shto nje Koleksion"
 
 #: admin/themes/default/collections/add.php:11
 msgid "Add Collection"
-msgstr ""
+msgstr "Shto Koleksion"
 
 #: admin/themes/default/collections/add.php:16
 #: admin/themes/default/collections/edit.php:30
@@ -418,7 +426,7 @@ msgstr ""
 #: admin/themes/default/items/batch-edit.php:50
 #: admin/themes/default/items/edit.php:28
 #: admin/themes/default/items/quick-filters.php:6
-#: admin/themes/default/items/show.php:50
+#: admin/themes/default/items/show.php:52
 msgid "Public"
 msgstr "Publik"
 
@@ -429,7 +437,7 @@ msgstr "Publik"
 #: admin/themes/default/items/batch-edit.php:65
 #: admin/themes/default/items/edit.php:34
 #: admin/themes/default/items/quick-filters.php:8
-#: admin/themes/default/items/show.php:51
+#: admin/themes/default/items/show.php:53
 msgid "Featured"
 msgstr ""
 
@@ -447,24 +455,24 @@ msgstr "Shfleto Koleksionet"
 #: admin/themes/default/item-types/browse.php:2
 #: admin/themes/default/items/browse.php:3
 #: admin/themes/default/plugins/browse.php:2
-#: admin/themes/default/tags/browse.php:3
+#: admin/themes/default/tags/browse.php:12
 #: admin/themes/default/users/browse.php:2
 #: application/views/scripts/items/browse.php:6
 #: application/views/scripts/search/index.php:2
 #, php-format
 msgid "(%s total)"
-msgstr ""
+msgstr "(%s totali)"
 
 #: admin/themes/default/collections/browse.php:23
 #: admin/themes/default/collections/show.php:51
+#: application/views/scripts/collections/browse.php:24
 msgid "Contributors"
-msgstr ""
+msgstr "Kontribues"
 
 #: admin/themes/default/collections/browse.php:24
-#: admin/themes/default/files/show.php:55
+#: admin/themes/default/files/show.php:66
 #: admin/themes/default/items/browse.php:43
-#: application/views/scripts/files/show.php:51
-#: application/views/scripts/items/browse.php:19
+#: application/views/scripts/items/browse.php:21
 msgid "Date Added"
 msgstr "Data e shtimit"
 
@@ -477,14 +485,14 @@ msgstr "Numri totali i elementeve"
 #: admin/themes/default/collections/browse.php:37
 #: admin/themes/default/items/browse.php:72
 msgid "(Private)"
-msgstr ""
+msgstr "(Private)"
 
 #: admin/themes/default/collections/browse.php:40
 #: admin/themes/default/collections/show.php:32
 #: admin/themes/default/element-sets/browse.php:27
 #: admin/themes/default/error/404.php:24 admin/themes/default/error/404.php:45
-#: admin/themes/default/files/show.php:28 admin/themes/default/index.php:38
-#: admin/themes/default/index.php:57
+#: admin/themes/default/files/show.php:26 admin/themes/default/index.php:54
+#: admin/themes/default/index.php:73
 #: admin/themes/default/item-types/browse.php:26
 #: admin/themes/default/item-types/show.php:51
 #: admin/themes/default/items/browse.php:24
@@ -492,13 +500,13 @@ msgstr ""
 #: admin/themes/default/items/browse.php:120
 #: admin/themes/default/items/files-form.php:11
 #: admin/themes/default/items/show.php:43
-#: admin/themes/default/users/browse.php:33
+#: admin/themes/default/users/browse.php:63
 msgid "Edit"
 msgstr "Ndrysho"
 
 #: admin/themes/default/collections/browse.php:49
 msgid "No contributors"
-msgstr ""
+msgstr "Ska Kontribues"
 
 #: admin/themes/default/collections/browse.php:67
 msgid "There are no collections on this page."
@@ -510,16 +518,16 @@ msgstr "Shfaq te gjitha koleksionet"
 
 #: admin/themes/default/collections/browse.php:70
 msgid "You have no collections."
-msgstr ""
+msgstr "Nuk keni koleksione."
 
 #: admin/themes/default/collections/browse.php:72
 msgid "Get started by adding your first collection."
-msgstr ""
+msgstr "Filloni duke shtuar koleksionin tuaj të parë."
 
 #: admin/themes/default/collections/edit.php:3
 #: admin/themes/default/collections/show.php:3
 #: admin/themes/default/items/edit.php:3 admin/themes/default/items/show.php:3
-#: application/libraries/globals.php:2490
+#: application/libraries/globals.php:2504
 #: application/views/scripts/collections/show.php:4
 #: application/views/scripts/functions.php:14
 msgid "[Untitled]"
@@ -533,33 +541,33 @@ msgstr "Ndrysho koleksionin #%s"
 #: admin/themes/default/collections/show.php:8
 #, php-format
 msgid "Collection #%s"
-msgstr ""
+msgstr "Koleksione #%s"
 
 #: admin/themes/default/collections/show.php:18
 #: admin/themes/default/item-types/show.php:30
-#: application/views/scripts/index.php:35
+#: application/views/scripts/index.php:37
 msgid "Recently Added Items"
 msgstr "Elementet e fundit"
 
 #: admin/themes/default/collections/show.php:41
 #: admin/themes/default/collections/show.php:42
-#: admin/themes/default/items/show.php:50
-#: admin/themes/default/items/show.php:51
-#: application/views/helpers/ItemSearchFilters.php:57
+#: admin/themes/default/items/show.php:52
+#: admin/themes/default/items/show.php:53
+#: application/views/helpers/ItemSearchFilters.php:69
 msgid "Yes"
-msgstr ""
+msgstr "Po"
 
 #: admin/themes/default/collections/show.php:41
 #: admin/themes/default/collections/show.php:42
-#: admin/themes/default/items/show.php:50
-#: admin/themes/default/items/show.php:51
-#: application/views/helpers/ItemSearchFilters.php:57
+#: admin/themes/default/items/show.php:52
+#: admin/themes/default/items/show.php:53
+#: application/views/helpers/ItemSearchFilters.php:69
 msgid "No"
-msgstr ""
+msgstr "Jo"
 
 #: admin/themes/default/collections/show.php:56
 msgid "No contributors."
-msgstr ""
+msgstr "Ska kontribues."
 
 #: admin/themes/default/common/appearance-nav.php:5
 msgid "Themes"
@@ -570,8 +578,9 @@ msgid "Navigation"
 msgstr ""
 
 #: admin/themes/default/common/appearance-nav.php:15
-#: admin/themes/default/common/global-nav.php:24
+#: admin/themes/default/common/global-nav.php:23
 #: admin/themes/default/element-sets/browse.php:6
+#: admin/themes/default/settings/edit-api.php:2
 #: admin/themes/default/settings/edit-item-type-elements.php:3
 #: admin/themes/default/settings/edit-search.php:2
 #: admin/themes/default/settings/edit-security.php:3
@@ -600,7 +609,7 @@ msgstr "Llojet e Materialeve"
 
 #: admin/themes/default/common/content-nav.php:21
 #: admin/themes/default/items/browse.php:94
-#: admin/themes/default/items/show.php:63
+#: admin/themes/default/items/show.php:65
 #: application/views/scripts/items/browse.php:46
 #: application/views/scripts/items/show.php:26
 msgid "Tags"
@@ -610,12 +619,12 @@ msgstr "Etiketat"
 #: application/views/scripts/common/delete-confirm.php:3
 #, php-format
 msgid "Delete %s"
-msgstr ""
+msgstr "Fshij %s"
 
-#: admin/themes/default/common/delete-confirm.php:11
+#: admin/themes/default/common/delete-confirm.php:10
 #: application/views/scripts/common/delete-confirm.php:12
 msgid "Are you sure?"
-msgstr ""
+msgstr "Jeni i sigurt?"
 
 #: admin/themes/default/common/footer.php:6
 #: admin/themes/default/common/login-footer.php:7
@@ -640,14 +649,14 @@ msgstr "Versioni %s"
 #: admin/themes/default/common/footer.php:10
 #: admin/themes/default/system-info/index.php:2
 msgid "System Information"
-msgstr ""
+msgstr "Informacionet Sistemit"
 
-#: admin/themes/default/common/global-nav.php:6
+#: admin/themes/default/common/global-nav.php:5
 #: admin/themes/default/plugins/browse.php:2
 msgid "Plugins"
 msgstr "Plugins"
 
-#: admin/themes/default/common/global-nav.php:18
+#: admin/themes/default/common/global-nav.php:17
 msgid "Users"
 msgstr "Perdoruesit"
 
@@ -658,43 +667,31 @@ msgstr "Perdoruesit"
 msgid "Omeka Admin"
 msgstr "Administrimi i Omeka"
 
-#: admin/themes/default/common/header.php:58
+#: admin/themes/default/common/header.php:60
 #: application/views/scripts/common/admin-bar.php:7
 #, php-format
 msgid "Welcome, %s"
 msgstr "Mire se erdhe , %s"
 
-#: admin/themes/default/common/header.php:59
+#: admin/themes/default/common/header.php:61
 #: application/views/scripts/common/admin-bar.php:15
 msgid "Log Out"
 msgstr "Dil"
 
-#: admin/themes/default/common/pagination_control.php:11
-msgid "&lt;"
-msgstr ""
-
-#: admin/themes/default/common/pagination_control.php:34
-#, php-format
-msgid "%s of %s"
-msgstr ""
-
-#: admin/themes/default/common/pagination_control.php:42
-msgid "&gt;"
-msgstr ""
-
 #: admin/themes/default/common/settings-nav.php:6
 msgid "General"
-msgstr ""
+msgstr "Pergjithshem"
 
 #: admin/themes/default/common/settings-nav.php:10
 msgid "Security"
-msgstr ""
+msgstr "Siguria"
 
 #: admin/themes/default/common/settings-nav.php:16
 #: application/views/helpers/SearchForm.php:34
-#: application/views/scripts/items/search-form.php:186
+#: application/views/scripts/items/search-form.php:189
+#: application/views/scripts/search/search-form.php:2
 msgid "Search"
-msgstr ""
+msgstr "Kërko"
 
 #: admin/themes/default/common/settings-nav.php:20
 msgid "Element Sets"
@@ -704,7 +701,12 @@ msgstr "Setet e Elementeve"
 msgid "Item Type Elements"
 msgstr ""
 
+#: admin/themes/default/common/settings-nav.php:32
+msgid "API"
+msgstr ""
+
 #: admin/themes/default/element-sets/browse.php:16
+#: admin/themes/default/users/browse.php:17
 #: application/forms/ItemTypes.php:141
 msgid "Name"
 msgstr "Emri"
@@ -721,7 +723,7 @@ msgstr ""
 
 #: admin/themes/default/element-sets/edit.php:29
 msgid "Comment"
-msgstr ""
+msgstr "Komente"
 
 #: admin/themes/default/error/403.php:2
 msgid "403: Forbidden"
@@ -757,21 +759,21 @@ msgstr ""
 msgid "If this does not help, try contacting the %s."
 msgstr "Nqs nuk funksionon, kontaktoni %s."
 
-#: admin/themes/default/error/404.php:16 admin/themes/default/index.php:30
+#: admin/themes/default/error/404.php:16 admin/themes/default/index.php:46
 msgid "Recent Items"
 msgstr "Materialet e fundit"
 
-#: admin/themes/default/error/404.php:29 admin/themes/default/index.php:43
+#: admin/themes/default/error/404.php:29 admin/themes/default/index.php:59
 msgid "Add a new item"
-msgstr ""
+msgstr "Shto artikull t'ri"
 
-#: admin/themes/default/error/404.php:36 admin/themes/default/index.php:48
+#: admin/themes/default/error/404.php:36 admin/themes/default/index.php:64
 msgid "Recent Collections"
 msgstr "Koleksionet e fundit"
 
-#: admin/themes/default/error/404.php:50 admin/themes/default/index.php:62
+#: admin/themes/default/error/404.php:50 admin/themes/default/index.php:78
 msgid "Add a new collection"
-msgstr ""
+msgstr "Shto nje koleksion t'ri"
 
 #: admin/themes/default/error/405.php:2
 msgid "405: Method Not Allowed"
@@ -795,87 +797,107 @@ msgstr "Ndrysho File #%s"
 msgid "File #%s"
 msgstr "File #%s"
 
-#: admin/themes/default/files/show.php:36
+#: admin/themes/default/files/show.php:35
 #: application/libraries/globals.php:398
 msgid "Item"
+msgstr "Artikuj"
+
+#: admin/themes/default/files/show.php:40
+msgid "Direct Links"
 msgstr ""
 
-#: admin/themes/default/files/show.php:41
-msgid "Format Metadata"
-msgstr "Format Metadata"
+#: admin/themes/default/files/show.php:42
+msgid "Original"
+msgstr ""
 
-#: admin/themes/default/files/show.php:43
-#: application/views/scripts/files/show.php:21
-msgid "Filename"
+#: admin/themes/default/files/show.php:44
+msgid "Fullsize"
 msgstr ""
 
 #: admin/themes/default/files/show.php:45
-#: application/views/scripts/files/show.php:26
+msgid "Thumbnail"
+msgstr ""
+
+#: admin/themes/default/files/show.php:46
+msgid "Square Thumbnail"
+msgstr ""
+
+#: admin/themes/default/files/show.php:52
+#: application/views/scripts/files/show.php:22
+msgid "Format Metadata"
+msgstr "Format Metadata"
+
+#: admin/themes/default/files/show.php:54
+msgid "Filename"
+msgstr ""
+
+#: admin/themes/default/files/show.php:56
+#: application/views/scripts/files/show.php:24
 msgid "Original Filename"
 msgstr "Emri Origjinal"
 
-#: admin/themes/default/files/show.php:47
-#: application/views/scripts/files/show.php:31
+#: admin/themes/default/files/show.php:58
+#: application/views/scripts/files/show.php:29
 msgid "File Size"
 msgstr "Madhesia"
 
-#: admin/themes/default/files/show.php:48
-#: application/views/scripts/files/show.php:32
+#: admin/themes/default/files/show.php:59
+#: application/views/scripts/files/show.php:30
 #, php-format
 msgid "%s bytes"
 msgstr ""
 
-#: admin/themes/default/files/show.php:53
-#: application/views/scripts/files/show.php:49
+#: admin/themes/default/files/show.php:64
 msgid "File History"
 msgstr "Historiku i ketij File"
 
-#: admin/themes/default/files/show.php:57
-#: application/views/scripts/files/show.php:55
+#: admin/themes/default/files/show.php:68
 msgid "Date Modified"
 msgstr "Data e ndryshimit"
 
-#: admin/themes/default/files/show.php:59
-#: application/views/scripts/files/show.php:59
+#: admin/themes/default/files/show.php:70
+#: application/views/scripts/files/show.php:34
 msgid "Authentication"
 msgstr "Autentifikimi"
 
-#: admin/themes/default/files/show.php:65
-#: application/views/scripts/files/show.php:37
+#: admin/themes/default/files/show.php:76
+#: application/views/scripts/files/show.php:40
 msgid "Type Metadata"
 msgstr "Lloji i Metadata"
 
-#: admin/themes/default/files/show.php:67
-#: application/views/scripts/files/show.php:39
+#: admin/themes/default/files/show.php:78
+#: application/views/scripts/files/show.php:42
 msgid "Mime Type"
 msgstr ""
 
-#: admin/themes/default/files/show.php:69
-#: application/views/scripts/files/show.php:43
+#: admin/themes/default/files/show.php:80
+#: application/views/scripts/files/show.php:46
 msgid "File Type / OS"
 msgstr "File Type / OS"
 
-#: admin/themes/default/files/show.php:76
+#: admin/themes/default/files/show.php:87
 msgid "Embedded Metadata"
 msgstr ""
 
-#: admin/themes/default/files/show.php:82
+#: admin/themes/default/files/show.php:93
 #: admin/themes/default/items/browse.php:133
-#: admin/themes/default/items/show.php:86
+#: admin/themes/default/items/show.php:88
+#: application/views/scripts/items/browse.php:60
+#: application/views/scripts/items/show.php:38
 msgid "Output Formats"
 msgstr "Formati i Daljes"
 
 #: admin/themes/default/index.php:6
 msgid "items"
-msgstr ""
+msgstr "Artikujt"
 
 #: admin/themes/default/index.php:7
 msgid "collections"
-msgstr ""
+msgstr "Koleksionet"
 
 #: admin/themes/default/index.php:8
 msgid "tags"
-msgstr ""
+msgstr "Etiketat"
 
 #: admin/themes/default/index.php:11
 msgid "plugins"
@@ -883,10 +905,19 @@ msgstr ""
 
 #: admin/themes/default/index.php:14
 msgid "users"
-msgstr ""
+msgstr "Perdoruesit"
 
 #: admin/themes/default/index.php:18
 msgid "theme"
+msgstr ""
+
+#: admin/themes/default/index.php:29
+msgid "A new version of Omeka is available for download."
+msgstr ""
+
+#: admin/themes/default/index.php:30
+#, php-format
+msgid "Upgrade to %s"
 msgstr ""
 
 #: admin/themes/default/item-types/add-existing-element.php:22
@@ -895,46 +926,46 @@ msgstr ""
 #: admin/themes/default/items/tag-form.php:23
 #: application/views/helpers/ElementInput.php:113
 msgid "Remove"
-msgstr ""
+msgstr "Heq"
 
 #: admin/themes/default/item-types/add-new-element.php:6
 msgid "Element Name"
-msgstr ""
+msgstr "Emra Elementesh"
 
 #: admin/themes/default/item-types/add-new-element.php:22
 msgid "Element Description"
-msgstr ""
+msgstr "Përshkrimi i Elementeve"
 
 #: admin/themes/default/item-types/add.php:2
 #: application/forms/ItemTypes.php:161
 msgid "Add Item Type"
-msgstr ""
+msgstr "Shto tipin artikull"
 
 #: admin/themes/default/item-types/browse.php:2
 msgid "Browse Item Types"
-msgstr ""
+msgstr "Shfleto tipet artikujve"
 
 #: admin/themes/default/item-types/browse.php:7
 #: admin/themes/default/item-types/browse.php:40
 msgid "Add an Item Type"
-msgstr ""
+msgstr "Shto tipin e artikujve"
 
 #: admin/themes/default/item-types/browse.php:14
 msgid "Type Name"
-msgstr ""
+msgstr "Tipi emrit"
 
 #: admin/themes/default/item-types/browse.php:16
 msgid "Total Items"
-msgstr ""
+msgstr "Artikuj Total"
 
 #: admin/themes/default/item-types/edit.php:8
 #, php-format
 msgid "Edit Item Type #%s"
-msgstr ""
+msgstr "Ndrysho llojin e materialit  #%s"
 
 #: admin/themes/default/item-types/form.php:14
 msgid "Item Type Information"
-msgstr ""
+msgstr "Informacioni i'tipit artikujve"
 
 #: admin/themes/default/item-types/form.php:15
 #: admin/themes/default/users/add.php:6 admin/themes/default/users/edit.php:14
@@ -945,7 +976,7 @@ msgstr ""
 #: admin/themes/default/item-types/form.php:25
 #: admin/themes/default/item-types/show.php:16
 msgid "Elements"
-msgstr ""
+msgstr "Elementet"
 
 #: admin/themes/default/item-types/form.php:42
 #: admin/themes/default/items/tag-form.php:22
@@ -956,20 +987,20 @@ msgstr ""
 #: admin/themes/default/item-types/form.php:80
 #: admin/themes/default/item-types/form.php:87
 msgid "Add Element"
-msgstr ""
+msgstr "Shto Elemente"
 
 #: admin/themes/default/item-types/form.php:84
 msgid "Existing"
-msgstr ""
+msgstr "Ekzistues"
 
 #: admin/themes/default/item-types/form.php:85
 msgid "New"
-msgstr ""
+msgstr "E're"
 
 #: admin/themes/default/item-types/show.php:8
 #, php-format
 msgid "Item Type #%s"
-msgstr ""
+msgstr "Lloji i materialit  #%s"
 
 #: admin/themes/default/item-types/show.php:25
 msgid "There are no elements."
@@ -977,24 +1008,24 @@ msgstr ""
 
 #: admin/themes/default/item-types/show.php:39
 msgid "There are no recently added items."
-msgstr ""
+msgstr "Nuk Ka artikuj të shtuar në kohët e fundit."
 
 #: admin/themes/default/items/add.php:2
 #: admin/themes/default/items/browse.php:20
 #: admin/themes/default/items/browse.php:116
 #: admin/themes/default/items/browse.php:151
 msgid "Add an Item"
-msgstr ""
+msgstr "Shto nje Artikull"
 
 #: admin/themes/default/items/add.php:12
 msgid "Add Item"
-msgstr ""
+msgstr "Shto Artikull"
 
 #: admin/themes/default/items/add.php:32
 #: admin/themes/default/items/batch-edit.php:89
 #: admin/themes/default/items/browse.php:90
 #: admin/themes/default/items/edit.php:41
-#: admin/themes/default/items/show.php:55
+#: admin/themes/default/items/show.php:57
 #: application/libraries/globals.php:400
 #: application/views/scripts/items/show.php:18
 msgid "Collection"
@@ -1028,7 +1059,7 @@ msgstr ""
 
 #: admin/themes/default/items/batch-edit.php:41
 msgid "Item Metadata"
-msgstr ""
+msgstr "Artikuj Metadata"
 
 #: admin/themes/default/items/batch-edit.php:46
 msgid "Public?"
@@ -1072,11 +1103,11 @@ msgstr "Shto Etikete"
 #: admin/themes/default/items/batch-edit.php:107
 #, php-format
 msgid "List of tags to add to all checked items, separated by %s."
-msgstr ""
+msgstr "Lista e etiketave për të shtuar për të gjitha sendet e kontrolluar, të ndara nga %s."
 
 #: admin/themes/default/items/batch-edit.php:117
 msgid "Check if you wish to delete selected items."
-msgstr ""
+msgstr "Kontrolloni në qoftë se ju dëshironi të fshini artikujt e zgjedhur."
 
 #: admin/themes/default/items/browse.php:3
 #: application/libraries/Omeka/Navigation.php:142
@@ -1122,11 +1153,11 @@ msgstr "Shfleto Materialet"
 #: admin/themes/default/items/browse.php:22
 #: admin/themes/default/items/browse.php:118
 #: admin/themes/default/items/search.php:2
-#: application/libraries/globals.php:2266
-#: application/libraries/globals.php:2649
+#: application/libraries/globals.php:2280
+#: application/libraries/globals.php:2663
 #: application/views/scripts/items/search.php:2
 msgid "Search Items"
-msgstr ""
+msgstr "Kërko Artikujt"
 
 #: admin/themes/default/items/browse.php:37
 msgid "Select"
@@ -1138,15 +1169,15 @@ msgstr "Asnje Etikete"
 
 #: admin/themes/default/items/browse.php:139
 msgid "Details"
-msgstr ""
+msgstr "Detajet"
 
 #: admin/themes/default/items/browse.php:140
 msgid "Show Details"
-msgstr ""
+msgstr "Shfaq Detajet"
 
 #: admin/themes/default/items/browse.php:141
 msgid "Hide Details"
-msgstr ""
+msgstr "Fsheh Detajet"
 
 #: admin/themes/default/items/browse.php:148
 msgid "You have no items."
@@ -1163,17 +1194,17 @@ msgstr ""
 
 #: admin/themes/default/items/browse.php:154
 msgid "refine your search"
-msgstr ""
+msgstr "Përsosni kërkimin tuaj"
 
 #: admin/themes/default/items/browse.php:154
 #, php-format
 msgid "Would you like to %s?"
-msgstr ""
+msgstr "Dëshironi të %s?"
 
 #: admin/themes/default/items/edit.php:8
 #, php-format
 msgid "Edit Item #%s"
-msgstr ""
+msgstr "Modifiko Artikullin #%s"
 
 #: admin/themes/default/items/files-form.php:2
 msgid "Click and drag the files into the preferred display order."
@@ -1181,11 +1212,11 @@ msgstr ""
 
 #: admin/themes/default/items/files-form.php:12
 msgid "Delete "
-msgstr ""
+msgstr "Fshij"
 
 #: admin/themes/default/items/files-form.php:21
 msgid "Add New Files"
-msgstr ""
+msgstr "Shto Dokument T'ri"
 
 #: admin/themes/default/items/files-form.php:23
 #, php-format
@@ -1194,7 +1225,7 @@ msgstr ""
 
 #: admin/themes/default/items/files-form.php:26
 msgid "Find a File"
-msgstr ""
+msgstr "Gjej dokument"
 
 #: admin/themes/default/items/form.php:25
 msgid "Add Another File"
@@ -1202,7 +1233,7 @@ msgstr ""
 
 #: admin/themes/default/items/item-type-form.php:15
 msgid "Pick this type"
-msgstr ""
+msgstr "Zgjedh kete tip"
 
 #: admin/themes/default/items/quick-filters.php:2
 #: admin/themes/default/items/quick-filters.php:4
@@ -1228,87 +1259,87 @@ msgid "Narrow by Specific Fields"
 msgstr ""
 
 #: admin/themes/default/items/search-form.php:27
-#: application/views/scripts/items/search-form.php:77
+#: application/views/scripts/items/search-form.php:80
 msgid "Add a Field"
-msgstr ""
+msgstr "Shto një fushë"
 
 #: admin/themes/default/items/search-form.php:63
 #: application/views/scripts/items/search-form.php:60
 msgid "contains"
-msgstr ""
+msgstr "përmban"
 
 #: admin/themes/default/items/search-form.php:64
 #: application/views/scripts/items/search-form.php:61
 msgid "does not contain"
-msgstr ""
+msgstr "nuk përmban"
 
 #: admin/themes/default/items/search-form.php:65
 #: application/views/scripts/items/search-form.php:62
 msgid "is exactly"
-msgstr ""
+msgstr "është saktësisht"
 
 #: admin/themes/default/items/search-form.php:66
 #: application/views/scripts/items/search-form.php:63
 msgid "is empty"
-msgstr ""
+msgstr "është bosh"
 
 #: admin/themes/default/items/search-form.php:67
 #: application/views/scripts/items/search-form.php:64
 msgid "is not empty"
-msgstr ""
+msgstr "nuk është bosh"
 
 #: admin/themes/default/items/search-form.php:84
-#: application/views/scripts/items/search-form.php:81
+#: application/views/scripts/items/search-form.php:84
 msgid "Search by a range of ID#s (example: 1-4, 156, 79)"
 msgstr ""
 
 #: admin/themes/default/items/search-form.php:98
-#: application/views/scripts/items/search-form.php:92
+#: application/views/scripts/items/search-form.php:95
 msgid "Search By Collection"
 msgstr ""
 
 #: admin/themes/default/items/search-form.php:114
-#: application/views/scripts/items/search-form.php:106
+#: application/views/scripts/items/search-form.php:109
 msgid "Search By Type"
 msgstr ""
 
 #: admin/themes/default/items/search-form.php:131
-#: application/views/scripts/items/search-form.php:122
+#: application/views/scripts/items/search-form.php:125
 msgid "Search By User"
 msgstr ""
 
 #: admin/themes/default/items/search-form.php:148
-#: application/views/scripts/items/search-form.php:137
+#: application/views/scripts/items/search-form.php:140
 msgid "Search By Tags"
 msgstr ""
 
 #: admin/themes/default/items/search-form.php:163
-#: application/views/scripts/items/search-form.php:150
+#: application/views/scripts/items/search-form.php:153
 msgid "Public/Non-Public"
 msgstr ""
 
 #: admin/themes/default/items/search-form.php:172
-#: application/views/scripts/items/search-form.php:158
+#: application/views/scripts/items/search-form.php:161
 msgid "Only Public Items"
 msgstr ""
 
 #: admin/themes/default/items/search-form.php:173
-#: application/views/scripts/items/search-form.php:159
+#: application/views/scripts/items/search-form.php:162
 msgid "Only Non-Public Items"
 msgstr ""
 
 #: admin/themes/default/items/search-form.php:183
-#: application/views/scripts/items/search-form.php:168
+#: application/views/scripts/items/search-form.php:171
 msgid "Featured/Non-Featured"
 msgstr ""
 
 #: admin/themes/default/items/search-form.php:192
-#: application/views/scripts/items/search-form.php:176
+#: application/views/scripts/items/search-form.php:179
 msgid "Only Featured Items"
 msgstr ""
 
 #: admin/themes/default/items/search-form.php:193
-#: application/views/scripts/items/search-form.php:177
+#: application/views/scripts/items/search-form.php:180
 msgid "Only Non-Featured Items"
 msgstr ""
 
@@ -1319,7 +1350,7 @@ msgstr ""
 #: admin/themes/default/items/show.php:8
 #, php-format
 msgid "Item #%s"
-msgstr ""
+msgstr "Artikuj #%s"
 
 #: admin/themes/default/items/show.php:30
 msgid "Prev Item"
@@ -1329,25 +1360,25 @@ msgstr ""
 msgid "Next Item"
 msgstr ""
 
-#: admin/themes/default/items/show.php:71
+#: admin/themes/default/items/show.php:73
 msgid "File Metadata"
 msgstr ""
 
-#: admin/themes/default/items/show.php:74
+#: admin/themes/default/items/show.php:76
 msgid "There are no files for this item yet."
 msgstr ""
 
-#: admin/themes/default/items/show.php:74
+#: admin/themes/default/items/show.php:76
 msgid "Add a File"
-msgstr ""
+msgstr "Shto dokument"
 
-#: admin/themes/default/items/show.php:78
+#: admin/themes/default/items/show.php:80
 msgid "View File Metadata"
-msgstr ""
+msgstr "Shfaq metadata te file"
 
-#: admin/themes/default/items/show.php:91
+#: admin/themes/default/items/show.php:93
 msgid "Bibliographic Citation"
-msgstr ""
+msgstr "Citim Bibliografik"
 
 #: admin/themes/default/items/tag-form.php:10
 #, php-format
@@ -1356,14 +1387,14 @@ msgstr ""
 
 #: admin/themes/default/items/tag-form.php:15
 msgid "All Tags"
-msgstr ""
+msgstr "T'gjithë Etiketat"
 
 #: admin/themes/default/items/tags.php:2
 msgid "Browse Items by Tag"
 msgstr ""
 
 #: admin/themes/default/items/tags.php:9
-#: admin/themes/default/tags/browse.php:49
+#: admin/themes/default/tags/browse.php:85
 msgid "There are no tags to display. You must first tag some items."
 msgstr ""
 
@@ -1386,42 +1417,48 @@ msgstr ""
 #: admin/themes/default/plugins/browse.php:57
 #, php-format
 msgid "by %s"
+msgstr "nga %s"
+
+#: admin/themes/default/plugins/browse.php:65
+#: admin/themes/default/themes/browse.php:23
+#: admin/themes/default/themes/browse.php:49
+msgid "Get support"
 msgstr ""
 
-#: admin/themes/default/plugins/browse.php:66
+#: admin/themes/default/plugins/browse.php:69
 #, php-format
 msgid "You have a new version of %s. Please upgrade!"
 msgstr ""
 
-#: admin/themes/default/plugins/browse.php:87
+#: admin/themes/default/plugins/browse.php:90
 msgid "Upgrade"
-msgstr ""
+msgstr "Azhorno"
 
-#: admin/themes/default/plugins/browse.php:97
+#: admin/themes/default/plugins/browse.php:100
 msgid "Configure"
-msgstr ""
+msgstr "Konfiguro"
 
-#: admin/themes/default/plugins/browse.php:103
+#: admin/themes/default/plugins/browse.php:106
 msgid "Deactivate"
-msgstr ""
+msgstr "Ç'aktivizo"
 
-#: admin/themes/default/plugins/browse.php:103
+#: admin/themes/default/plugins/browse.php:106
 #: admin/themes/default/users/activate.php:31
 #: application/views/scripts/users/activate.php:26
 msgid "Activate"
-msgstr ""
+msgstr "Aktivizo"
 
-#: admin/themes/default/plugins/browse.php:113
+#: admin/themes/default/plugins/browse.php:116
 #: admin/themes/default/plugins/confirm-uninstall.php:16
 msgid "Uninstall"
-msgstr ""
+msgstr "Ç'instalo"
 
-#: admin/themes/default/plugins/browse.php:126
+#: admin/themes/default/plugins/browse.php:129
 #: application/forms/Install.php:167
 msgid "Install"
-msgstr ""
+msgstr "Instalo"
 
-#: admin/themes/default/plugins/browse.php:137
+#: admin/themes/default/plugins/browse.php:140
 msgid ""
 "You do not have any plugins installed. Add them to the plugins directory to "
 "see them listed here."
@@ -1448,11 +1485,37 @@ msgstr ""
 
 #: admin/themes/default/plugins/confirm-uninstall.php:17
 msgid "or"
-msgstr ""
+msgstr "ose"
 
 #: admin/themes/default/plugins/confirm-uninstall.php:17
 #: admin/themes/default/settings/edit-item-type-elements.php:50
 msgid "Cancel"
+msgstr "Anulo"
+
+#: admin/themes/default/settings/edit-api.php:11
+msgid "Enable API"
+msgstr ""
+
+#: admin/themes/default/settings/edit-api.php:15
+msgid "Enable or disable the API by checking or uncheking the box below."
+msgstr ""
+
+#: admin/themes/default/settings/edit-api.php:22
+msgid "Results per Page"
+msgstr ""
+
+#: admin/themes/default/settings/edit-api.php:26
+msgid "Maximum number of API results displayed per page."
+msgstr ""
+
+#: admin/themes/default/settings/edit-api.php:32
+#, php-format
+msgid ""
+"After enabling the API, applications may be able to show, browse, add, edit,"
+" and delete your site resources. Viewing protected content, as well as "
+"adding, editing, and deleting content, is protected and requires key "
+"authentication. Each key corresponds to, and has all permissions of, an "
+"existing Omeka user. You can create keys on each user's %sedit page%s."
 msgstr ""
 
 #: admin/themes/default/settings/edit-item-type-elements.php:12
@@ -1478,7 +1541,7 @@ msgstr ""
 
 #: admin/themes/default/settings/edit-item-type-elements.php:50
 msgid "Ok"
-msgstr ""
+msgstr "Ok"
 
 #: admin/themes/default/settings/edit-search.php:10
 msgid "Search Record Types"
@@ -1524,50 +1587,64 @@ msgstr ""
 
 #: admin/themes/default/settings/edit-settings.php:23
 msgid "Test"
-msgstr ""
+msgstr "Testo"
 
-#: admin/themes/default/tags/browse.php:3
+#: admin/themes/default/tags/browse.php:7
 msgid "Edit Tags"
 msgstr ""
 
-#: admin/themes/default/tags/browse.php:10
+#: admin/themes/default/tags/browse.php:9
+msgid "Browse Tags"
+msgstr ""
+
+#: admin/themes/default/tags/browse.php:18
+#: application/views/scripts/search/index.php:12
+msgid "Record Type"
+msgstr ""
+
+#: admin/themes/default/tags/browse.php:24
 msgid "Editing Tags"
 msgstr ""
 
-#: admin/themes/default/tags/browse.php:13
+#: admin/themes/default/tags/browse.php:27
 msgid "To view all items with a tag, click the number."
 msgstr ""
 
-#: admin/themes/default/tags/browse.php:14
+#: admin/themes/default/tags/browse.php:28
 msgid ""
 "To edit the tag name, click the name and begin editing, and hit \"enter\" to"
 " save. To cancel an edit, click the ESC key or click away from the tag."
 msgstr ""
 
-#: admin/themes/default/tags/browse.php:15
+#: admin/themes/default/tags/browse.php:29
 msgid ""
 "To delete a tag, click the X. Deleting a tag will not delete the tagged "
 "items."
 msgstr ""
 
-#: admin/themes/default/tags/browse.php:23
+#: admin/themes/default/tags/browse.php:39
 msgid "Most"
-msgstr ""
+msgstr "Shumica"
 
-#: admin/themes/default/tags/browse.php:24
+#: admin/themes/default/tags/browse.php:40
 msgid "Least"
-msgstr ""
+msgstr "Pakica"
 
-#: admin/themes/default/tags/browse.php:25
+#: admin/themes/default/tags/browse.php:41
 msgid "Alphabetical"
-msgstr ""
+msgstr "Alfabetik"
 
-#: admin/themes/default/tags/browse.php:26
+#: admin/themes/default/tags/browse.php:42
 msgid "Recent"
+msgstr "Fundit"
+
+#: admin/themes/default/tags/browse.php:53
+#: admin/themes/default/tags/browse.php:55
+msgid "Record Types"
 msgstr ""
 
 #: admin/themes/default/themes/browse.php:15
-#: admin/themes/default/themes/browse.php:42
+#: admin/themes/default/themes/browse.php:43
 #, php-format
 msgid "Screenshot for %s Theme"
 msgstr ""
@@ -1581,12 +1658,12 @@ msgid "Current Theme"
 msgstr ""
 
 #: admin/themes/default/themes/browse.php:21
-#: admin/themes/default/themes/browse.php:47
+#: admin/themes/default/themes/browse.php:48
 #, php-format
 msgid "By %s"
-msgstr ""
+msgstr "Nga %s"
 
-#: admin/themes/default/themes/browse.php:26
+#: admin/themes/default/themes/browse.php:27
 msgid ""
 "Add new themes by downloading them from the <a href=\"http://omeka.org/add-"
 "ons/themes/\" target=\"_blank\">Omeka Theme Directory</a>, or <a "
@@ -1594,7 +1671,7 @@ msgid ""
 "target=\"_blank\">design your own</a>!"
 msgstr ""
 
-#: admin/themes/default/themes/browse.php:44
+#: admin/themes/default/themes/browse.php:45
 msgid "Use this theme"
 msgstr ""
 
@@ -1651,61 +1728,119 @@ msgstr ""
 #: admin/themes/default/users/activate.php:2
 #: application/views/scripts/users/activate.php:2
 msgid "User Activation"
-msgstr ""
+msgstr "Aktivizo Përdoruesin"
 
 #: admin/themes/default/users/activate.php:18
 #: application/forms/ResetPassword.php:23
 #: application/views/scripts/users/activate.php:13
 msgid "Create a Password"
-msgstr ""
+msgstr "Krijo një Fjalëkalim"
 
 #: admin/themes/default/users/activate.php:24 application/forms/Install.php:60
 #: application/forms/ResetPassword.php:44
 #: application/views/scripts/users/activate.php:19
 msgid "Re-type the Password"
-msgstr ""
+msgstr "Përsërisni Fjalëkalimin"
 
 #: admin/themes/default/users/add.php:2
 msgid "Add New User"
-msgstr ""
+msgstr "Shto Përdorues T'ri"
 
 #: admin/themes/default/users/browse.php:2
 msgid "Browse Users"
-msgstr ""
+msgstr "Shfleto Përdoruesit"
 
 #: admin/themes/default/users/browse.php:8
 msgid "Add a User"
-msgstr ""
+msgstr "Shto një Përdorues"
 
-#: admin/themes/default/users/browse.php:17
+#: admin/themes/default/users/browse.php:20
+#: admin/themes/default/users/browse.php:47
 #: admin/themes/default/users/show.php:18 application/forms/Install.php:30
 #: application/forms/Login.php:21 application/forms/User.php:29
 msgid "Username"
-msgstr ""
+msgstr "Përdorues"
 
-#: admin/themes/default/users/browse.php:18
-#: admin/themes/default/users/show.php:20
-msgid "Real Name"
-msgstr ""
-
-#: admin/themes/default/users/browse.php:19
+#: admin/themes/default/users/browse.php:23
+#: admin/themes/default/users/browse.php:49
 #: admin/themes/default/users/show.php:22 application/forms/Install.php:73
 #: application/forms/RecoverPassword.php:27 application/forms/User.php:95
 #: application/views/scripts/users/forgot-password.php:14
 msgid "Email"
+msgstr "Email"
+
+#: admin/themes/default/users/browse.php:35
+msgid "Search users"
 msgstr ""
 
-#: admin/themes/default/users/browse.php:20 application/forms/User.php:128
+#: admin/themes/default/users/browse.php:36
+msgid "Usernames"
+msgstr ""
+
+#: admin/themes/default/users/browse.php:37
+msgid "Real names"
+msgstr ""
+
+#: admin/themes/default/users/browse.php:38
+msgid "Email addresses"
+msgstr ""
+
+#: admin/themes/default/users/browse.php:48
+#: admin/themes/default/users/show.php:20
+msgid "Real Name"
+msgstr "Emri Vërtetë"
+
+#: admin/themes/default/users/browse.php:50 application/forms/User.php:128
 msgid "Role"
-msgstr ""
+msgstr "Rol"
 
-#: admin/themes/default/users/browse.php:30
+#: admin/themes/default/users/browse.php:60
 msgid "inactive"
 msgstr ""
 
 #: admin/themes/default/users/edit.php:8
 #, php-format
 msgid "Edit User #%s"
+msgstr "Ndrysho Përdoruesin #%s"
+
+#: admin/themes/default/users/edit.php:24
+msgid "API Keys"
+msgstr ""
+
+#: admin/themes/default/users/edit.php:27
+msgid "New key label"
+msgstr ""
+
+#: admin/themes/default/users/edit.php:31
+msgid ""
+"To create a new API key, enter a label for the key below. For example, "
+"describe for what purpose it will be used. This key will have all your "
+"permissions; treat it as you would your password."
+msgstr ""
+
+#: admin/themes/default/users/edit.php:41
+msgid "You have no API keys. Use the form above to create one."
+msgstr ""
+
+#: admin/themes/default/users/edit.php:43
+#, php-format
+msgid "%s has no API keys. Use the form above to create one."
+msgstr ""
+
+#: admin/themes/default/users/edit.php:51
+msgid "Key"
+msgstr ""
+
+#: admin/themes/default/users/edit.php:52
+msgid "Last IP"
+msgstr ""
+
+#: admin/themes/default/users/edit.php:53
+msgid "Last accessed"
+msgstr ""
+
+#: admin/themes/default/users/edit.php:54
+msgid "Rescind"
 msgstr ""
 
 #: admin/themes/default/users/forgot-password.php:2
@@ -1721,7 +1856,7 @@ msgstr ""
 #: admin/themes/default/users/forgot-password.php:21
 #: application/views/scripts/users/forgot-password.php:18
 msgid "Submit"
-msgstr ""
+msgstr "Parqit"
 
 #: admin/themes/default/users/forgot-password.php:25
 #: application/views/scripts/users/forgot-password.php:7
@@ -1731,7 +1866,7 @@ msgstr ""
 #: admin/themes/default/users/login.php:3 application/forms/Login.php:55
 #: application/views/scripts/users/login.php:3
 msgid "Log In"
-msgstr ""
+msgstr "Hyr"
 
 #: admin/themes/default/users/login.php:17
 msgid "(Lost your password?)"
@@ -1740,19 +1875,19 @@ msgstr ""
 #: admin/themes/default/users/show.php:8
 #, php-format
 msgid "User #%s"
-msgstr ""
+msgstr "Perdorues #%s"
 
 #: admin/themes/default/users/show.php:15
 msgid "Edit this User"
-msgstr ""
+msgstr "Modifiko këtë përdorues"
 
 #: application/controllers/AppearanceController.php:48
 msgid "The appearance settings have been updated."
 msgstr ""
 
 #: application/controllers/AppearanceController.php:51
-#: application/controllers/ItemTypesController.php:34
-#: application/controllers/ItemTypesController.php:60
+#: application/controllers/ItemTypesController.php:35
+#: application/controllers/ItemTypesController.php:61
 #: application/controllers/SettingsController.php:47
 #: application/controllers/SettingsController.php:79
 #: install/views/scripts/index/index.phtml:17
@@ -1827,7 +1962,7 @@ msgstr ""
 
 #: application/controllers/ErrorController.php:64
 msgid "Page not found."
-msgstr ""
+msgstr "Faqja nuk u gjënd"
 
 #: application/controllers/ErrorController.php:79
 msgid "Access denied."
@@ -1842,12 +1977,12 @@ msgstr ""
 msgid "The item type \"%s\" was successfully added."
 msgstr ""
 
-#: application/controllers/ItemTypesController.php:54
+#: application/controllers/ItemTypesController.php:55
 #, php-format
 msgid "The item type \"%s\" was successfully updated."
 msgstr ""
 
-#: application/controllers/ItemTypesController.php:149
+#: application/controllers/ItemTypesController.php:150
 #, php-format
 msgid ""
 "This will delete the \"%s\" item type but will not delete the elements "
@@ -1855,7 +1990,7 @@ msgid ""
 "lose all metadata that is specific to the item type."
 msgstr ""
 
-#: application/controllers/ItemTypesController.php:157
+#: application/controllers/ItemTypesController.php:158
 #, php-format
 msgid ""
 "The item type \"%s\" was successfully added!  You may now add elements to "
@@ -1908,11 +2043,11 @@ msgstr ""
 
 #: application/controllers/ItemsController.php:255
 msgid "You must choose some items to batch edit."
-msgstr ""
+msgstr "Ju duhet të zgjidhni disa objekte në grumbull për modifikim."
 
 #: application/controllers/ItemsController.php:299
 msgid "User is not allowed to modify visibility of items."
-msgstr ""
+msgstr "Përdoruesi nuk është e lejuar për të ndryshuar shikimit të artikujve."
 
 #: application/controllers/ItemsController.php:304
 msgid "User is not allowed to modify featured status of items."
@@ -1924,7 +2059,7 @@ msgstr ""
 
 #: application/controllers/ItemsController.php:317
 msgid "User is not allowed to edit selected items."
-msgstr ""
+msgstr "Përdoruesi nuk është e lejuar për të modifikur artikuj të zgjedhur."
 
 #: application/controllers/ItemsController.php:322
 msgid "User is not allowed to tag selected items."
@@ -1948,7 +2083,7 @@ msgstr ""
 #: application/controllers/PluginsController.php:52
 #, php-format
 msgid "The %s plugin was successfully configured!"
-msgstr ""
+msgstr "Shtojca %s është konfiguruar me sukses!"
 
 #: application/controllers/PluginsController.php:70
 #, php-format
@@ -1989,15 +2124,15 @@ msgstr ""
 #: application/controllers/PluginsController.php:168
 #, php-format
 msgid "The following error occurred while deactivating the %s plugin: "
-msgstr ""
+msgstr "Gabimi në vijim ndodhi gjatë deaktivizimit Shtojcës %s:"
 
-#: application/controllers/PluginsController.php:191
+#: application/controllers/PluginsController.php:187
 #, php-format
 msgid "The %s plugin was successfully upgraded!"
-msgstr ""
+msgstr "Shtojca %s është përmirësuar me sukses!"
 
-#: application/controllers/PluginsController.php:198
-#: application/controllers/PluginsController.php:203
+#: application/controllers/PluginsController.php:196
+#: application/controllers/PluginsController.php:202
 #, php-format
 msgid "The following error occurred while upgrading the %s plugin: "
 msgstr ""
@@ -2009,7 +2144,7 @@ msgstr ""
 
 #: application/controllers/PluginsController.php:262
 msgid "You must confirm the uninstall before proceeding."
-msgstr ""
+msgstr "Ju duhet të konfirmojë ç'instalimin para se të vazhdoni."
 
 #: application/controllers/PluginsController.php:280
 #, php-format
@@ -2055,11 +2190,15 @@ msgstr ""
 msgid "The item type elements were successfully changed!"
 msgstr ""
 
-#: application/controllers/SettingsController.php:160
+#: application/controllers/SettingsController.php:149
+msgid "The API configuration was successfully changed!"
+msgstr ""
+
+#: application/controllers/SettingsController.php:175
 msgid "The ImageMagick directory path works."
 msgstr ""
 
-#: application/controllers/SettingsController.php:161
+#: application/controllers/SettingsController.php:176
 msgid "The ImageMagick directory path does not work."
 msgstr ""
 
@@ -2078,7 +2217,7 @@ msgstr ""
 
 #: application/controllers/ThemesController.php:25
 msgid "Invalid form submission."
-msgstr ""
+msgstr "Dorëzimi formë e pavlefshme."
 
 #: application/controllers/ThemesController.php:33
 msgid "You have chosen an illegal theme name. Please select another theme."
@@ -2101,26 +2240,26 @@ msgstr ""
 msgid "There was an error on the form. Please try again."
 msgstr ""
 
-#: application/controllers/UpgradeController.php:49
+#: application/controllers/UpgradeController.php:50
 msgid "SQL error in migration: "
-msgstr ""
+msgstr "Gabim SQL-je në migrim:"
 
 #: application/controllers/UsersController.php:70
 msgid ""
 "Unable to reset password. Please verify that the information is correct and "
 "contact an administrator if necessary."
-msgstr ""
+msgstr "Në pamundësi për të rivendosur fjalëkalimin. Ju lutem verifikoni se informacioni është i saktë dhe kontaktoni administratorin nëse është e nevojshme."
 
 #: application/controllers/UsersController.php:108
 msgid "Please follow this link to reset your password:"
-msgstr ""
+msgstr "Ju lutem ndiqni këtë lidhje për të rivendosni fjalëkalimin tuaj:"
 
 #: application/controllers/UsersController.php:110
 #: application/controllers/UsersController.php:113
-#: application/controllers/UsersController.php:296
+#: application/controllers/UsersController.php:322
 #, php-format
 msgid "%s Administrator"
-msgstr ""
+msgstr "%s Administratori"
 
 #: application/controllers/UsersController.php:114
 #, php-format
@@ -2131,48 +2270,60 @@ msgstr ""
 msgid "Please check your email for a link to reset your password."
 msgstr ""
 
+#: application/controllers/UsersController.php:126
+msgid "Invalid activation code given."
+msgstr ""
+
 #: application/controllers/UsersController.php:135
 msgid "Password: The passwords do not match."
-msgstr ""
+msgstr "Fjalëkalimi: Fjalëkalimet nuk përputhen."
 
 #: application/controllers/UsersController.php:143
 msgid "You may now log in to Omeka."
-msgstr ""
+msgstr "Ju tani mund të hyni te Omeka."
 
 #: application/controllers/UsersController.php:160
 msgid "Add User"
-msgstr ""
+msgstr "Shto Përdorues"
 
 #: application/controllers/UsersController.php:171
 #, php-format
 msgid "The user \"%s\" was successfully added!"
-msgstr ""
+msgstr "Ky përdorues \"%s\" u shtua me sukses!"
 
 #: application/controllers/UsersController.php:175
 #, php-format
 msgid "The user \"%s\" was added, but the activation email could not be sent."
 msgstr ""
 
-#: application/controllers/UsersController.php:226
-#: application/controllers/UsersController.php:237
+#: application/controllers/UsersController.php:233
+msgid "A new API key was successfully created."
+msgstr ""
+
+#: application/controllers/UsersController.php:241
+msgid "An existing API key was successfully rescinded."
+msgstr ""
+
+#: application/controllers/UsersController.php:246
+#: application/controllers/UsersController.php:257
 msgid "There was an invalid entry on the form. Please try again."
 msgstr ""
 
-#: application/controllers/UsersController.php:233
+#: application/controllers/UsersController.php:253
 msgid "Password changed!"
-msgstr ""
+msgstr "Fjalëkalimi ndryshoi!"
 
-#: application/controllers/UsersController.php:244
+#: application/controllers/UsersController.php:264
 #, php-format
 msgid "The user %s was successfully changed!"
-msgstr ""
+msgstr "Përdoruesi %s është ndryshuar me sukses!"
 
-#: application/controllers/UsersController.php:265
+#: application/controllers/UsersController.php:291
 #, php-format
 msgid "The user \"%s\" was successfully deleted!"
 msgstr ""
 
-#: application/controllers/UsersController.php:271
+#: application/controllers/UsersController.php:297
 #, php-format
 msgid ""
 "%s will be deleted from the system. Items, collections, and tags created by "
@@ -2180,23 +2331,23 @@ msgid ""
 "this user."
 msgstr ""
 
-#: application/controllers/UsersController.php:292
+#: application/controllers/UsersController.php:318
 msgid "Welcome!"
-msgstr ""
+msgstr "Mire se vini!"
 
-#: application/controllers/UsersController.php:294
+#: application/controllers/UsersController.php:320
 #, php-format
 msgid ""
 "Your account for the %s repository has been created. Please click the "
 "following link to activate your account:"
 msgstr ""
 
-#: application/controllers/UsersController.php:297
+#: application/controllers/UsersController.php:323
 #, php-format
 msgid "Activate your account with the %s repository"
 msgstr ""
 
-#: application/controllers/UsersController.php:392
+#: application/controllers/UsersController.php:418
 msgid "Login information incorrect. Please try again."
 msgstr ""
 
@@ -2261,7 +2412,7 @@ msgstr ""
 
 #: application/forms/ChangePassword.php:25
 msgid "Current Password"
-msgstr ""
+msgstr "Fjalëkalimi tanishem"
 
 #: application/forms/ChangePassword.php:26
 #: application/forms/ChangePassword.php:36
@@ -2274,7 +2425,7 @@ msgstr ""
 
 #: application/forms/ChangePassword.php:34
 msgid "New Password"
-msgstr ""
+msgstr "Fjalëkalim i'ri"
 
 #: application/forms/ChangePassword.php:41
 msgid "New password must be entered."
@@ -2291,35 +2442,35 @@ msgstr ""
 
 #: application/forms/ChangePassword.php:68
 msgid "Repeat New Password"
-msgstr ""
+msgstr "Përsërit Fjalëkalim e'ri"
 
 #: application/forms/ChangePassword.php:75
 msgid "Save Password"
-msgstr ""
+msgstr "Ruaj Fjalëkalimin"
 
 #: application/forms/ChangePassword.php:84
 msgid "Change Password"
-msgstr ""
+msgstr "Ndrysho Fjalëkalimin"
 
 #: application/forms/GeneralSettings.php:22 application/forms/Install.php:79
 msgid "Site Title"
-msgstr ""
+msgstr "Titulli Faqes"
 
 #: application/forms/GeneralSettings.php:26 application/forms/Install.php:84
 msgid "Site Description"
-msgstr ""
+msgstr "Përshkrimi i Faqes"
 
 #: application/forms/GeneralSettings.php:31 application/forms/Install.php:88
 msgid "Administrator Email"
-msgstr ""
+msgstr "Email-i Administratorit"
 
 #: application/forms/GeneralSettings.php:37 application/forms/Install.php:94
 msgid "Site Copyright Information"
-msgstr ""
+msgstr "Informacini të drejtat e autorit të Faqes"
 
 #: application/forms/GeneralSettings.php:41 application/forms/Install.php:98
 msgid "Site Author Information"
-msgstr ""
+msgstr "Informacini i autorit të Faqes"
 
 #: application/forms/GeneralSettings.php:45 application/forms/Install.php:102
 msgid "Tag Delimiter"
@@ -2341,7 +2492,7 @@ msgstr ""
 
 #: application/forms/Install.php:37 application/forms/Login.php:34
 msgid "Password"
-msgstr ""
+msgstr "Fjalëkalimi"
 
 #: application/forms/Install.php:38
 msgid "must be at least 6 characters"
@@ -2395,7 +2546,7 @@ msgstr ""
 
 #: application/forms/Install.php:184
 msgid "Site Settings"
-msgstr ""
+msgstr "Konfigurimet e Faqes"
 
 #: application/forms/ItemTypes.php:142
 msgid "The name of the item type."
@@ -2412,15 +2563,15 @@ msgstr ""
 
 #: application/forms/Login.php:27
 msgid "Username cannot be empty."
-msgstr ""
+msgstr "Përdoruesi nuk mund të jetë bosh."
 
 #: application/forms/Login.php:40
 msgid "Password cannot be empty."
-msgstr ""
+msgstr "Fjalëkalimi nuk mund të jetë bosh."
 
 #: application/forms/Login.php:48
 msgid "Remember Me?"
-msgstr ""
+msgstr "Më mban mend mu?"
 
 #: application/forms/Navigation.php:156
 msgid "[Default]"
@@ -2434,34 +2585,34 @@ msgstr ""
 msgid "Cannot find parent navigation page."
 msgstr ""
 
-#: application/forms/Navigation.php:326
+#: application/forms/Navigation.php:325
 msgid "All navigation links must have URIs."
 msgstr ""
 
-#: application/forms/Navigation.php:339
+#: application/forms/Navigation.php:338
 msgid "All navigation links must have different URIs."
 msgstr ""
 
-#: application/forms/Navigation.php:345
+#: application/forms/Navigation.php:344
 #, php-format
 msgid "Invalid URI for \"%s\" navigation link:  \"%s\""
 msgstr ""
 
-#: application/forms/Navigation.php:378
+#: application/forms/Navigation.php:377
 msgid "Navigation links that have undeleteable sublinks cannot be deleted."
 msgstr ""
 
 #: application/forms/RecoverPassword.php:36
 msgid "Email address is required."
-msgstr ""
+msgstr "Adresa e-mailit është e nevojshme."
 
 #: application/forms/RecoverPassword.php:46
 msgid "Invalid email address given."
-msgstr ""
+msgstr "Adresa e-mail e pavlefshme është dhënë."
 
 #: application/forms/RecoverPassword.php:48
 msgid "Invalid format given for email address."
-msgstr ""
+msgstr "Formati i pavlefshëm dhënë për adresë e-mail."
 
 #: application/forms/RecoverPassword.php:50
 msgid "Invalid hostname given for email address."
@@ -2469,15 +2620,15 @@ msgstr ""
 
 #: application/forms/RecoverPassword.php:66
 msgid "Invalid email address"
-msgstr ""
+msgstr "Adresa e-mail e pavlefshme"
 
 #: application/forms/ResetPassword.php:27
 msgid "Password is required."
-msgstr ""
+msgstr "Fjalëkalimi është i nevojshem."
 
 #: application/forms/ResetPassword.php:33
 msgid "Typed passwords do not match."
-msgstr ""
+msgstr "Fjalëkalimet e shtypura nuk përputhen."
 
 #: application/forms/SecuritySettings.php:24
 msgid "Disable File Upload Validation"
@@ -2591,7 +2742,7 @@ msgstr ""
 msgid "Name as it should be displayed on the site"
 msgstr ""
 
-#: application/forms/User.php:87 application/models/User.php:91
+#: application/forms/User.php:87 application/models/User.php:169
 msgid "Real Name is required."
 msgstr ""
 
@@ -2601,11 +2752,11 @@ msgstr ""
 
 #: application/forms/User.php:101
 msgid "Email is required."
-msgstr ""
+msgstr "E-mailit është e nevojshme."
 
 #: application/forms/User.php:120
 msgid "This email address is already in use."
-msgstr ""
+msgstr "Kjo adresë e-mail është në përdorim."
 
 #: application/forms/User.php:129
 msgid ""
@@ -2616,7 +2767,7 @@ msgstr ""
 
 #: application/forms/User.php:137
 msgid "Active?"
-msgstr ""
+msgstr "Aktivizo?"
 
 #: application/forms/User.php:138
 msgid "Inactive users cannot log in to the site."
@@ -2649,7 +2800,7 @@ msgid ""
 "subpage of the navigation object."
 msgstr ""
 
-#: application/libraries/Omeka/Navigation/Page/Uri.php:124
+#: application/libraries/Omeka/Navigation/Page/Uri.php:128
 #, php-format
 msgid "Invalid URI for Omeka_Navigation_Page_Uri object: %s"
 msgstr ""
@@ -2659,13 +2810,58 @@ msgstr ""
 msgid "Path to plugin.ini for \"%s\" is not correct."
 msgstr ""
 
-#: application/libraries/Omeka/Plugin/Installer.php:77
+#: application/libraries/Omeka/Plugin/Installer.php:79
 #, php-format
 msgid "The \"%s\" plugin must be installed and have newer files to upgrade it."
 msgstr ""
 
-#: application/libraries/Omeka/Plugin/Installer.php:114
+#: application/libraries/Omeka/Plugin/Installer.php:116
 msgid "Plugin must have a valid directory name before it can be installed."
+msgstr ""
+
+#: application/libraries/Omeka/Plugin/Loader.php:112
+#, php-format
+msgid "Plugin named '%s' has already been loaded/registered."
+msgstr ""
+
+#: application/libraries/Omeka/Plugin/Loader.php:153
+#, php-format
+msgid "The %s plugin could not be loaded."
+msgstr ""
+
+#: application/libraries/Omeka/Plugin/Loader.php:174
+#, php-format
+msgid "The required plugin '%s' could not be found."
+msgstr ""
+
+#: application/libraries/Omeka/Plugin/Loader.php:247
+#, php-format
+msgid "'%s' has no valid bootstrap file."
+msgstr ""
+
+#: application/libraries/Omeka/Plugin/Loader.php:250
+#, php-format
+msgid "'%s' has not been installed."
+msgstr ""
+
+#: application/libraries/Omeka/Plugin/Loader.php:253
+#, php-format
+msgid "'%s' has not been activated."
+msgstr ""
+
+#: application/libraries/Omeka/Plugin/Loader.php:256
+#, php-format
+msgid "'%s' requires a newer version of Omeka."
+msgstr ""
+
+#: application/libraries/Omeka/Plugin/Loader.php:261
+#, php-format
+msgid "'%s' must be upgraded to the new version before it can be loaded."
+msgstr ""
+
+#: application/libraries/Omeka/Plugin/Loader.php:264
+#, php-format
+msgid "'%s' cannot be loaded twice."
 msgstr ""
 
 #: application/libraries/Omeka/Record/AbstractRecord.php:349
@@ -2693,244 +2889,276 @@ msgstr ""
 msgid "Exact match"
 msgstr ""
 
-#: application/libraries/globals.php:1228
-#: application/libraries/globals.php:1249
+#: application/libraries/globals.php:1227
+#: application/libraries/globals.php:1248
 #, php-format
 msgid "Could not find file %s!"
 msgstr ""
 
-#: application/libraries/globals.php:1555
+#: application/libraries/globals.php:1554
 msgid "Select Below "
-msgstr ""
+msgstr "Zgjedh Poshte"
 
-#: application/libraries/globals.php:1597
+#: application/libraries/globals.php:1596
 msgid "Omeka RSS Feed"
 msgstr ""
 
-#: application/libraries/globals.php:1598
+#: application/libraries/globals.php:1597
 msgid "Omeka Atom Feed"
 msgstr ""
 
-#: application/libraries/globals.php:2248
+#: application/libraries/globals.php:2262
 msgid "View"
-msgstr ""
+msgstr "Vëzhgo"
 
-#: application/libraries/globals.php:2310
+#: application/libraries/globals.php:2324
 msgid "No Collection"
 msgstr "Asnje Koleksion"
 
-#: application/libraries/globals.php:2425
+#: application/libraries/globals.php:2439
 msgid "RSS"
-msgstr ""
+msgstr "RSS"
 
-#: application/libraries/globals.php:2442
+#: application/libraries/globals.php:2456
 msgid "Next Item &rarr;"
 msgstr ""
 
-#: application/libraries/globals.php:2462
+#: application/libraries/globals.php:2476
 msgid "&larr; Previous Item"
 msgstr ""
 
-#: application/libraries/globals.php:2639
+#: application/libraries/globals.php:2653
 msgid "Browse All"
-msgstr ""
+msgstr "Shfleto T'gjitha"
 
-#: application/libraries/globals.php:2644
+#: application/libraries/globals.php:2658
 msgid "Browse by Tag"
-msgstr ""
+msgstr "Shfleto me Etiketa"
 
-#: application/libraries/globals.php:2906
+#: application/libraries/globals.php:2931
 msgid "No tags are available."
 msgstr ""
 
-#: application/models/Builder/Item.php:256
+#: application/models/Builder/Item.php:263
 msgid "Must specify a file transfer type when attaching files to an item!"
-msgstr ""
+msgstr "Duhet të specifikoni një lloj transferimi dokumentash kur bashkëngjit dokumenta për një artikull!"
 
-#: application/models/Collection.php:81
+#: application/models/Collection.php:117
 msgid "Cannot associate the collection with an unsaved user."
 msgstr ""
 
-#: application/models/Element.php:141
+#: application/models/Element.php:175
 msgid "The element name must not be empty."
 msgstr ""
 
-#: application/models/Element.php:147
+#: application/models/Element.php:179
+msgid "Invalid element set."
+msgstr ""
+
+#: application/models/Element.php:185
 #, php-format
 msgid "An element named \"%s\" already exists for the \"%s\" element set."
 msgstr ""
 
-#: application/models/Element.php:175
+#: application/models/Element.php:216
 #, php-format
 msgid "Cannot set element set ID: set named \"%s\" does not exist."
 msgstr ""
 
-#: application/models/ElementSet.php:98
+#: application/models/ElementSet.php:146
 msgid "Name of element set must be unique."
-msgstr ""
+msgstr "Emri i elementit të vendosur duhet të jetë unike."
 
-#: application/models/ElementSet.php:102
+#: application/models/ElementSet.php:150
 msgid "Name of element set must not be empty."
-msgstr ""
+msgstr "Emri i elementit caktuar nuk duhet të jetë bosh."
 
-#: application/models/ElementText.php:28
+#: application/models/ElementText.php:59
 msgid "Invalid record ID."
 msgstr ""
 
-#: application/models/ElementText.php:31
+#: application/models/ElementText.php:62
 msgid "All element texts must have a record type."
 msgstr ""
 
-#: application/models/ElementText.php:34
+#: application/models/ElementText.php:65
 msgid "Invalid element ID."
 msgstr ""
 
-#: application/models/File.php:150
+#: application/models/File.php:241
 msgid "Cannot get the local path for a stored file."
-msgstr ""
+msgstr "Nuk mund të merrni rrugën lokale për një dokument të ruajtur."
 
-#: application/models/File.php:371
+#: application/models/File.php:458
 #, php-format
 msgid "\"%s\" is not a valid file derivative."
 msgstr ""
 
-#: application/models/Item.php:264
+#: application/models/Item.php:317
 msgid ""
 "Files cannot be attached to an item that is not persistent in the database!"
+msgstr "Dokumentat nuk mund të jenë bashkëngjitur në një objekt që nuk është këmbëngulës në bazën e të dhënave!"
+
+#. / Chicago-style item citation: two authors
+#: application/models/Item.php:444
+#, php-format
+msgid "%1$s and %2$s"
 msgstr ""
 
-#: application/models/Item.php:430
+#. / Chicago-style item citation: three authors
+#: application/models/Item.php:448
+#, php-format
+msgid "%1$s, %2$s, and %3$s"
+msgstr ""
+
+#. / Chicago-style item citation: more than three authors
+#: application/models/Item.php:452
+#, php-format
+msgid "%s et al."
+msgstr ""
+
+#. / Chicago-style item citation: access date and URL
+#: application/models/Item.php:470
+#, php-format
+msgid "accessed %1$s, %2$s."
+msgstr ""
+
+#: application/models/Item.php:487
 msgid "Cannot add an existing file to an item!"
-msgstr ""
+msgstr "Nuk mund të shtoni një dokument ekzistues tek një artikull!"
 
-#: application/models/Item.php:434
+#: application/models/Item.php:491
 msgid "File must be valid before it can be associated with an item!"
+msgstr "Dokumenti duhet të jetë e vlefshme para se të mund të shoqërohet me një artikull!"
+
+#: application/models/Item.php:515
+msgid "Invalid item type."
 msgstr ""
 
-#: application/models/ItemType.php:67
+#: application/models/Item.php:518
+msgid "Invalid collection."
+msgstr ""
+
+#: application/models/ItemType.php:102
 #, php-format
 msgid "The item type name must have between %1$s and %2$s characters."
-msgstr ""
+msgstr "Emri Llojit të artikullit duhet të ketë midis %1$s dhe %2$s karaktere."
 
-#: application/models/ItemType.php:71
+#: application/models/ItemType.php:106
 msgid "The item type name must be unique."
-msgstr ""
+msgstr "Emri Lloji artikull duhet të jetë unike."
 
-#: application/models/ItemType.php:150
+#: application/models/ItemType.php:179
 msgid "There are too many values in the element ordering array."
-msgstr ""
+msgstr "Ka shumë vlera në rrjetin e elementeve urdhërues."
 
-#: application/models/ItemType.php:152
+#: application/models/ItemType.php:181
 msgid "There are too few values in the element ordering array."
-msgstr ""
+msgstr "Ka shumë pak vlera në rrjetin e elementeve urdhërues."
 
-#: application/models/ItemType.php:191
+#: application/models/ItemType.php:218
 msgid ""
 "Invalid element data. To add elements, you must either pass an element "
 "objects or an array of element metadata."
 msgstr ""
 
-#: application/models/ItemType.php:258
+#: application/models/ItemType.php:282
 msgid ""
 "Cannot remove elements from an item type that is not persistent in the "
 "database!"
 msgstr ""
 
-#: application/models/ItemType.php:267
+#: application/models/ItemType.php:291
 #, php-format
 msgid "Cannot find element with ID %s!"
 msgstr ""
 
-#: application/models/ItemType.php:309
+#: application/models/ItemType.php:332
 #, php-format
 msgid "Item type does not contain an element with the ID %s!"
 msgstr ""
 
-#: application/models/ItemType.php:329
+#: application/models/ItemType.php:353
 msgid ""
 "Invalid parameter. The hasElement function requires either an element object"
 " or an element id to determine if an item type has an element."
 msgstr ""
 
-#: application/models/Mixin/ElementText.php:270
+#: application/models/Mixin/ElementText.php:278
 #, php-format
 msgid "There is no element \"%1$s\", \"%2$s\"!"
 msgstr ""
 
-#: application/models/Mixin/ElementText.php:289
+#: application/models/Mixin/ElementText.php:297
 #, php-format
 msgid "Cannot find an element with an ID of '%s'!"
 msgstr ""
 
-#: application/models/Mixin/ElementText.php:408
+#: application/models/Mixin/ElementText.php:416
 msgid "Element texts are not formatted correctly!"
 msgstr ""
 
-#: application/models/Mixin/ElementText.php:554
+#: application/models/Mixin/ElementText.php:562
 #, php-format
 msgid "The \"%s\" field has at least one invalid value!"
 msgstr ""
 
-#: application/models/Mixin/ElementText.php:613
+#: application/models/Mixin/ElementText.php:632
 msgid "Cannot save element text for records that are not yet persistent!"
 msgstr ""
 
-#: application/models/Mixin/Tag.php:157
-msgid "A valid record ID # must be provided when tagging."
-msgstr ""
-
-#: application/models/Option.php:25 application/models/Option.php:29
+#: application/models/Option.php:50 application/models/Option.php:54
 msgid "Each option must have a unique name."
 msgstr ""
 
-#: application/models/Plugin.php:84
+#: application/models/Plugin.php:133
 msgid "Names of plugins must not be blank"
 msgstr ""
 
-#: application/models/Table/Collection.php:41
+#: application/models/Table/Collection.php:76
 #, php-format
 msgid "[Untitled] #%s"
 msgstr ""
 
-#: application/models/Table/Item.php:159
+#: application/models/Table/Item.php:161
 msgid "Invalid search type given!"
-msgstr ""
+msgstr "Lloji i dhënë kërkimit i pavlefshëm!"
 
-#: application/models/Tag.php:41
+#: application/models/Tag.php:56
 msgid "Tags must be given a name."
 msgstr ""
 
-#: application/models/Tag.php:45
+#: application/models/Tag.php:60
 msgid "That name is already taken for this tag."
 msgstr ""
 
-#: application/models/User.php:48
+#: application/models/User.php:110
 msgid "User may not change permissions to super-user"
 msgstr ""
 
-#: application/models/User.php:51
+#: application/models/User.php:113
 msgid "User may not change roles."
 msgstr ""
 
-#: application/models/User.php:104 application/models/User.php:143
+#: application/models/User.php:182 application/models/User.php:230
 msgid "The user must be assigned a role."
 msgstr ""
 
-#: application/models/User.php:109
+#: application/models/User.php:187
 #, php-format
 msgid "The username \"%1$s\" must be between %2$s and %3$s characters."
 msgstr ""
 
-#: application/models/User.php:111
+#: application/models/User.php:189
 msgid "The username must be alphanumeric."
 msgstr ""
 
-#: application/models/User.php:113
+#: application/models/User.php:191
 #, php-format
 msgid "'%s' is already in use. Please choose another username."
 msgstr ""
 
-#: application/models/UsersActivations.php:26
+#: application/models/UsersActivations.php:54
 msgid "Cannot create a user activation for non-existent user."
 msgstr ""
 
@@ -3043,11 +3271,11 @@ msgstr ""
 
 #: application/views/helpers/ElementForm.php:65
 msgid "Add Input"
-msgstr ""
+msgstr "Shto të dhëna"
 
 #: application/views/helpers/ElementInput.php:131
 msgid "Use HTML"
-msgstr ""
+msgstr "Përdor HTML"
 
 #: application/views/helpers/GetCurrentRecord.php:27
 #, php-format
@@ -3063,20 +3291,16 @@ msgstr ""
 msgid "An array of records is not available for the loop."
 msgstr ""
 
-#: application/views/helpers/RecordUrl.php:33
+#: application/views/helpers/RecordUrl.php:34
 msgid "Invalid record passed while getting record URL."
 msgstr ""
 
-#: application/views/helpers/RecordUrl.php:43
+#: application/views/helpers/RecordUrl.php:44
 msgid "Invalid action passed while getting record URL."
 msgstr ""
 
-#: application/views/helpers/RecordUrl.php:66
+#: application/views/helpers/RecordUrl.php:75
 msgid "Invalid return value while getting record URL."
-msgstr ""
-
-#: application/views/scripts/collections/browse.php:24
-msgid "Contributors(s)"
 msgstr ""
 
 #: application/views/scripts/collections/browse.php:31
@@ -3101,20 +3325,17 @@ msgstr ""
 msgid "Proudly powered by <a href=\"http://omeka.org\">Omeka</a>."
 msgstr ""
 
-#: application/views/scripts/common/pagination_control.php:8
-msgid "First"
+#: application/views/scripts/common/pagination_control.php:11
+msgid "&lt;"
 msgstr ""
 
-#: application/views/scripts/common/pagination_control.php:15
-msgid "Previous"
+#: application/views/scripts/common/pagination_control.php:34
+#, php-format
+msgid "%s of %s"
 msgstr ""
 
-#: application/views/scripts/common/pagination_control.php:31
-msgid "Next"
-msgstr ""
-
-#: application/views/scripts/common/pagination_control.php:38
-msgid "Last"
+#: application/views/scripts/common/pagination_control.php:42
+msgid "&gt;"
 msgstr ""
 
 #: application/views/scripts/error/403.php:2
@@ -3129,7 +3350,7 @@ msgstr ""
 #: application/views/scripts/error/404.php:2
 #: application/views/scripts/error/404.xml.php:1
 msgid "404 Page Not Found"
-msgstr ""
+msgstr "404 Faqja nuk u gjend"
 
 #: application/views/scripts/error/404.php:6
 #, php-format
@@ -3142,7 +3363,7 @@ msgstr ""
 
 #: application/views/scripts/error/405.php:2
 msgid "405 Method Not Allowed"
-msgstr ""
+msgstr "405 Metoda Nuk Lejohet"
 
 #: application/views/scripts/error/405.php:6
 #, php-format
@@ -3161,23 +3382,23 @@ msgid ""
 "messages</a>."
 msgstr ""
 
-#: application/views/scripts/index.php:14
+#: application/views/scripts/index.php:16
 msgid "Featured Item"
 msgstr ""
 
-#: application/views/scripts/index.php:22
+#: application/views/scripts/index.php:24
 msgid "Featured Collection"
 msgstr ""
 
-#: application/views/scripts/index.php:67
+#: application/views/scripts/index.php:69
 msgid "No recent items available."
 msgstr ""
 
-#: application/views/scripts/index.php:71
+#: application/views/scripts/index.php:73
 msgid "View All Items"
-msgstr ""
+msgstr "Shfaq te gjitha artikujt"
 
-#: application/views/scripts/items/browse.php:22
+#: application/views/scripts/items/browse.php:24
 msgid "Sort by: "
 msgstr ""
 
@@ -3185,16 +3406,36 @@ msgstr ""
 msgid "No featured items are available."
 msgstr ""
 
+#: application/views/scripts/items/search-form.php:76
+msgid "Remove field"
+msgstr ""
+
 #: application/views/scripts/items/show.php:10
 msgid "Files"
-msgstr ""
+msgstr "Dokumente"
 
 #: application/views/scripts/items/show.php:33
 msgid "Citation"
-msgstr ""
+msgstr "Citime"
 
 #: application/views/scripts/search/index.php:2
 msgid "Search Omeka "
+msgstr ""
+
+#: application/views/scripts/search/index.php:29
+msgid "Your query returned no results."
+msgstr ""
+
+#: application/views/scripts/search/search-filters.php:3
+msgid "Query:"
+msgstr ""
+
+#: application/views/scripts/search/search-filters.php:4
+msgid "Query type:"
+msgstr ""
+
+#: application/views/scripts/search/search-filters.php:5
+msgid "Record types:"
 msgstr ""
 
 #: application/views/scripts/search/search-form.php:6
@@ -3236,7 +3477,7 @@ msgstr ""
 
 #: install/views/scripts/index/fatal-error.phtml:1
 msgid "Fatal Error"
-msgstr ""
+msgstr "Gabim Fatal"
 
 #: install/views/scripts/index/index.phtml:2
 msgid "Installation Warning"
@@ -3266,7 +3507,7 @@ msgstr ""
 
 #: install/views/scripts/index/installed.phtml:3
 msgid "Public Site"
-msgstr ""
+msgstr "Faqja Publike"
 
 #: install/views/scripts/index/installed.phtml:3
 msgid "Admin Dashboard"

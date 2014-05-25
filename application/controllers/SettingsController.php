@@ -138,6 +138,22 @@ class SettingsController extends Omeka_Controller_AbstractActionController
         $this->view->element_set = $elementSet;
     }
     
+    public function editApiAction()
+    {
+        $keyTable = $this->_helper->db->getTable('Key');
+        
+        // Handle a form submission
+        if ($this->getRequest()->isPost()) {
+            set_option('api_enable', (bool) $_POST['api_enable']);
+            set_option('api_filter_element_texts', (bool) $_POST['api_filter_element_texts']);
+            set_option('api_per_page', (int) $_POST['api_per_page']);
+            $this->_helper->flashMessenger(__('The API configuration was successfully changed!'), 'success');
+        }
+        
+        $this->view->api_resources = Omeka_Controller_Plugin_Api::getApiResources();
+        $this->view->keys = $keyTable->findAll();
+    }
+    
     /**
      * Determine whether or not ImageMagick has been correctly installed and
      * configured.  
@@ -155,7 +171,7 @@ class SettingsController extends Omeka_Controller_AbstractActionController
     {
         $this->_helper->viewRenderer->setNoRender(true);
         $imPath = $this->_getParam('path-to-convert');
-        $isValid = Omeka_File_Derivative_Image_Creator::isValidImageMagickPath($imPath);
+        $isValid = Omeka_File_Derivative_Strategy_ExternalImageMagick::isValidImageMagickPath($imPath);
         $this->getResponse()->setBody(
             $isValid ? '<div class="success">' . __('The ImageMagick directory path works.') . '</div>' 
                      : '<div class="error">' . __('The ImageMagick directory path does not work.') . '</div>');

@@ -108,12 +108,14 @@ class Omeka_Controller_UsersControllerTest extends Omeka_Test_AppTestCase
 
         $request = $this->getRequest();
         $request->setPost(array(
-            'new_password' => 'password',
-            'new_password_confirm' => 'password'
+            'username' => 'differentuser',
+            'name' => 'Different User',
+            'email' => $this->email,
+            'role' => 'super'
         ));
         $request->setMethod('post');
         $this->dispatch("users/edit/$id");
-        $this->assertRedirectTo('/users/browse');
+        $this->assertRedirectTo("/users/edit/$id");
     }
 
     public function testEditSelfRedirect()
@@ -124,11 +126,13 @@ class Omeka_Controller_UsersControllerTest extends Omeka_Test_AppTestCase
 
         $request = $this->getRequest();
         $request->setPost(array(
-            'new_password' => 'password',
-            'new_password_confirm' => 'password'
+            'username' => 'differentuser',
+            'name' => 'Different User',
+            'email' => $this->email,
+            'role' => 'super'
         ));
         $request->setMethod('post');
         $this->dispatch("users/edit/$id");
-        $this->assertRedirectTo('/');
+        $this->assertRedirectTo("/users/edit/$id");
     }
 }
