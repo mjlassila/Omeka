@@ -12,45 +12,6 @@
 class Table_Item extends Omeka_Db_Table
 {
     /**
-     * Can specify a range of valid Item IDs or an individual ID
-     *
-     * @param Omeka_Db_Select $select
-     * @param string $range Example: 1-4, 75, 89
-     * @return void
-     */
-    public function filterByRange($select, $range)
-    {
-        // Comma-separated expressions should be treated individually
-        $exprs = explode(',', $range);
-
-        // Construct a SQL clause where every entry in this array is linked by 'OR'
-        $wheres = array();
-
-        foreach ($exprs as $expr) {
-            // If it has a '-' in it, it is a range of item IDs.  Otherwise it is
-            // a single item ID
-            if (strpos($expr, '-') !== false) {
-                list($start, $finish) = explode('-', $expr);
-
-                // Naughty naughty koolaid, no SQL injection for you
-                $start  = (int) trim($start);
-                $finish = (int) trim($finish);
-
-                $wheres[] = "(items.id BETWEEN $start AND $finish)";
-
-                //It is a single item ID
-            } else {
-                $id = (int) trim($expr);
-                $wheres[] = "(items.id = $id)";
-            }
-        }
-
-        $where = join(' OR ', $wheres);
-
-        $select->where('('.$where.')');
-    }
-
-    /**
      * Run the search filter on the SELECT statement
      *
      * @param Zend_Db_Select
@@ -134,22 +95,23 @@ class Table_Item extends Omeka_Db_Table
                 continue;
             }
             
-            $value = $v['terms'];
+            $value = isset($v['terms']) ? $v['terms'] : null;
             $type = $v['type'];
             $elementId = (int) $v['element_id'];
+            $alias = "_advanced_{$advancedIndex}";
 
             $inner = true;
+            $extraJoinCondition = '';
             // Determine what the WHERE clause should look like.
             switch ($type) {
-                case 'does not contain':
-                    $predicate = "NOT LIKE " . $db->quote('%'.$value .'%');
-                    break;
                 case 'contains':
                     $predicate = "LIKE " . $db->quote('%'.$value .'%');
                     break;
                 case 'is exactly':
                     $predicate = ' = ' . $db->quote($value);
                     break;
+                case 'does not contain':
+                    $extraJoinCondition = "AND {$alias}.text LIKE " . $db->quote('%'.$value .'%');
                 case 'is empty':
                     $inner = false;
                     $predicate = "IS NULL";
@@ -160,12 +122,13 @@ class Table_Item extends Omeka_Db_Table
                 default:
                     throw new Omeka_Record_Exception(__('Invalid search type given!'));
             }
-            
-            $alias = "_advanced_{$advancedIndex}";
 
             // Note that $elementId was earlier forced to int, so manual quoting
             // is unnecessary here
             $joinCondition = "{$alias}.record_id = items.id AND {$alias}.record_type = 'Item' AND {$alias}.element_id = $elementId";
+            if ($extraJoinCondition) {
+                $joinCondition .= ' ' . $extraJoinCondition;
+            }
             if ($inner) {
                 $select->joinInner(array($alias => $db->ElementText), $joinCondition, array());
             } else {

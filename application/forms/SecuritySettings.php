@@ -85,6 +85,10 @@ class Omeka_Form_SecuritySettings extends Omeka_Form
             'rows' => 5
         ));
 
+        $this->addElement('hash', 'security_csrf', array(
+            'timeout' => 3600
+        ));
+
         $this->addDisplayGroup(
             array(
                 File::DISABLE_DEFAULT_VALIDATION_OPTION,

@@ -361,10 +361,15 @@ class Omeka_Db_Table
      */
     public function applySearchFilters($select, $params)
     {
+        $alias = $this->getTableAlias();
         $columns = $this->getColumns();
         foreach($columns as $column) {
             if(array_key_exists($column, $params)) {
-                $select->where("$column = ?", $params[$column]);
+                if (is_array($params[$column])) {
+                    $select->where("`$alias`.`$column` IN (?)", $params[$column]);
+                } else {
+                    $select->where("`$alias`.`$column` = ?", $params[$column]);
+                }
             }
         }
     }
@@ -542,6 +547,50 @@ class Omeka_Db_Table
         }
         $alias = $this->getTableAlias();
         $select->where("`$alias`.`$userField` = ?", $userId);
+    }
+
+    /**
+     * Filter returned records by ID.
+     *
+     * Can specify a range of valid record IDs or an individual ID
+     *
+     * @version 2.2.2
+     * @param Omeka_Db_Select $select
+     * @param string $range Example: 1-4, 75, 89
+     * @return void
+     */
+    public function filterByRange($select, $range)
+    {
+        // Comma-separated expressions should be treated individually
+        $exprs = explode(',', $range);
+
+        // Construct a SQL clause where every entry in this array is linked by 'OR'
+        $wheres = array();
+
+        $alias = $this->getTableAlias();
+
+        foreach ($exprs as $expr) {
+            // If it has a '-' in it, it is a range of item IDs.  Otherwise it is
+            // a single item ID
+            if (strpos($expr, '-') !== false) {
+                list($start, $finish) = explode('-', $expr);
+
+                // Naughty naughty koolaid, no SQL injection for you
+                $start  = (int) trim($start);
+                $finish = (int) trim($finish);
+
+                $wheres[] = "($alias.id BETWEEN $start AND $finish)";
+
+                //It is a single item ID
+            } else {
+                $id = (int) trim($expr);
+                $wheres[] = "($alias.id = $id)";
+            }
+        }
+
+        $where = join(' OR ', $wheres);
+
+        $select->where('('.$where.')');
     }
     
     /**

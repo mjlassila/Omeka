@@ -8,6 +8,8 @@
 
 /**
  * Abstract class for pluggable file derivative creation strategies.
+ *
+ * @package Omeka\File\Derivative\Strategy
  */
 abstract class Omeka_File_Derivative_AbstractStrategy
     implements Omeka_File_Derivative_StrategyInterface
@@ -19,7 +21,8 @@ abstract class Omeka_File_Derivative_AbstractStrategy
      *
      * @param array $options
      */
-    public function setOptions(array $options) {
+    public function setOptions(array $options)
+    {
         $this->_options = $options;
     }
 
@@ -28,7 +31,8 @@ abstract class Omeka_File_Derivative_AbstractStrategy
      *
      * @return array
      */
-    public function getOptions() {
+    public function getOptions()
+    {
         return $this->_options;
     }
 
@@ -40,7 +44,8 @@ abstract class Omeka_File_Derivative_AbstractStrategy
      *  Defaults to null.
      * @return mixed
      */
-    public function getOption($name, $default = null) {
+    public function getOption($name, $default = null)
+    {
         if (array_key_exists($name, $this->_options)) {
             return $this->_options[$name];
         } else {

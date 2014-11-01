@@ -17,8 +17,6 @@ class Omeka_Form_User extends Omeka_Form
     
     private $_hasActiveElement;
     
-    private $_submitButtonText;
-    
     private $_user;
     
     private $_usersActivations;
@@ -145,6 +143,10 @@ class Omeka_Form_User extends Omeka_Form
                 'description' => $description 
             ));
         }
+
+        $this->addElement('hash', 'user_csrf', array(
+            'timeout' => 3600
+        ));
     }
     
     public function setHasRoleElement($flag)
@@ -156,16 +158,7 @@ class Omeka_Form_User extends Omeka_Form
     {
         $this->_hasActiveElement = (boolean)$flag;
     }
-    
-    public function setSubmitButtonText($text)
-    {
-        if (!$this->getElement('submit')) {
-            $this->_submitButtonText = $text;
-        } else {
-            $this->submit->setLabel($text);
-        }
-    }   
-    
+
     public function setUser(User $user)
     {
         $this->_user = $user;
